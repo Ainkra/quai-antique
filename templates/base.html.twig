@@ -1,19 +1,66 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
-        {% block stylesheets %}
-        {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+		<link
+		rel="shortcut icon" href="#">
+		<!--Patch error 404 favicon not found-->
+		<script src="https://kit.fontawesome.com/abab09da6b.js" crossorigin="anonymous"></script>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+	</head>
 
-    <!--"npm run watch"-->
+	<!--"npm run watch"-->
+	<body class="background min-h-screen">
+		<header class="bg-brown w-auto">
+			<img src="{{ asset('img/logo.png') }}" class="m-auto h-20 w-80 pt-3">
+			<hr class="w-64 flex justify-center m-auto hr-modifier">
+			<nav class="stylisedPolice text-center text-white flex gap-4 justify-center text-xs rounded-md w-auto mx-4 my-auto sm:text-lg">
+				<a href="">Notre carte</a>
+				<a href="">Réservations</a>
+				<a href="">Galerie</a>
+				<a href="">Connexion</a>
+			</nav>
+		</header>
+		<main class="stylisedPolice m-auto">
+			<section class="bg-white mt-10 grid grid-cols-3 grid-row-2 row-span-3 gap-3 group text-center">
+				<h1 class="category-title">Entrées</h1>
+				<h1 class="category-title">Desserts</h1>
+				<h1 class="category-title">Boissons</h1>
+				<h1 class="category-title">Plats</h1>
+				<h1 class="category-title">Apéritifs</h1>
+				<h1 class="category-title">Notre cave</h1>
+			</section>
+			<section class="bg-white mt-10 grid grid-cols-3 grid-row-1 row-span-3 gap-3 group text-center ">
+				<h1 class="category-title">Menu Saveurs Antique</h1>
+				<h1 class="category-title">Menu Enfant</h1>
+				<h1 class="category-title">Menu Midi</h1>
+			</section>
+		</main>
 
-    <body class="background">
-
-    </body>
+		{# <footer class="footer h-26 stylisedPolice">
+																																																															<section class="bg-brown text-white grid grid-cols-3 grid-row-1 row-span-3 gap-3 m-auto">
+																																																																<div>
+																																																																	<h1 class=" text-center sm:text-md md:text-lg">Horaire d'ouverture</h1>
+																																																																</div>
+																																																																<div class="text-center">
+																																																																	<h1 class="sm:text-sm md:text-lg">Adresse</h1>
+																																																																	<p class="text-sm">309 Chemin de la Plaine, 74400 Chamonix</p>
+																																																																</div>
+																																																																<div class="text-center">
+																																																																	<h1 class="sm:text-sm md:text-sm">Contact</h1>
+																																																																	<p class="text-sm">Tel: +33 06 58 23 65 98</p>
+																																																																	<p class="text-sm">Fax: +33 09 56 45 25 97</p>
+																																																																	<br>
+																																																																	<p class="text-sm">Email: quai.antique@gmail.com</p>
+																																																																</div>
+																																																															</section>
+																																																														</footer> #}
+	</body>
 </html>

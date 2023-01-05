@@ -3,9 +3,51 @@
 @tailwind components;
 @tailwind utilities;
 
+.stylisedPolice {
+    font-family: 'Roboto Slab', serif;
+}
+
+nav {
+    position: sticky;
+    top: 0px;
+}
+
+.bg-brown {
+    background-color: #392C1E;
+}
+
+.hr-modifier {
+    color: #906427;
+    height: 3px;
+    border: none;
+}
+
+a {
+    @apply hover:bg-yellow-900 w-32 py-2 rounded-md;
+}
+
 .background {
-    background-image: url("../resources/img/bg.webp");
+    background-image: url("/public/img/bg.webp");
+    object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100vw;
+    width: 100%;
+    background-position: center;
 }
+
+.category-title {
+    @apply text-xl;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* .logo {
+    background-image: url("/assets/resources/img/logo.png");
+} */
 
