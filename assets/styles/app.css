@@ -31,7 +31,6 @@ a {
     object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vw;
     width: 100%;
     background-position: center;
 }
