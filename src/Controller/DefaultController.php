@@ -7,9 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends AbstractController
 {
-
     public function index() : Response
     {
-        return $this -> render('base.html.twig', ["surname" => "Loïs",]);
+        return $this -> render('base.html.twig');
     }
 }

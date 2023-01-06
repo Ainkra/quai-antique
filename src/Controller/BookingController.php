@@ -10,10 +10,6 @@ class BookingController extends AbstractController
 
     public function booking() : Response
     {
-        $userFirstName = ["test"];
-
-        return $this -> render('booking.html.twig', [
-            'user_first_name' => $userFirstName,
-        ]);
+        return $this -> render('booking.html.twig');
     }
 }
