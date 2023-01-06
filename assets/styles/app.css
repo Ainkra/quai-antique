@@ -16,6 +16,10 @@ nav {
     background-color: #392C1E;
 }
 
+.bg-light-brown {
+    background-color: #906427;
+}
+
 .hr-modifier {
     color: #906427;
     height: 3px;
@@ -41,6 +45,10 @@ a {
     bottom: 0;
     left: 0;
 }
+
+/* ::-webkit-datetime-edit { padding-right: 3em; }
+::-webkit-datetime-edit-text { padding: 0 0px; }
+::-webkit-inner-spin-button { display: none; } */
 
 /* .logo {
     background-image: url("/assets/resources/img/logo.png");

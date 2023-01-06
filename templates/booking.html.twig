@@ -22,25 +22,54 @@
 			<img src="{{ asset('img/logo.png') }}" class="m-auto h-20 w-80 pt-3">
 			<hr class="w-64 flex justify-center m-auto hr-modifier">
 			<nav class="stylisedPolice text-center text-white flex gap-4 justify-center lg:text-xl rounded-md w-auto mx-4 my-auto xs:text-xs">
-				<a href="">Notre carte</a>
-				<a href="{{ path('booking') }}">Réservations</a>
+				<a href="{{ path('index') }}">Notre carte</a>
+				<a href="">Réservations</a>
 				<a href="">Galerie</a>
 				<a href="">Connexion</a>
 			</nav>
 		</header>
-		<main class="stylisedPolice m-auto">
-			<section class="bg-white mt-10 grid lg:grid-cols-3 lg:grid-row-2 xs:grid-cols-1 row-span-3 gap-3 group text-center">
-				<h1 class="category-title">Entrées</h1>
-				<h1 class="category-title">Desserts</h1>
-				<h1 class="category-title">Boissons</h1>
-				<h1 class="category-title">Plats</h1>
-				<h1 class="category-title">Apéritifs</h1>
-				<h1 class="category-title">Notre cave</h1>
+
+		<main class="stylisedPolice m-auto bg-brown mt-10 lg:mx-16 xs:mx-0 grid lg:grid-cols-3 lg:grid-row-2 xs:grid-cols-1 pt-10 text-center group">
+			<section class="">
+				<i class="fa-solid fa-utensils text-white bg-light-brown p-1 rounded-sm"></i>
+				<select name="cover" id="cover-select" class="rounded-sm pl-0" required>
+					<option value="" disabled selected>Nombre de couvert</option>
+					<option value="1">1
+					</option>
+					<option value="2">2
+					</option>
+					<option value="3">3
+					</option>
+					<option value="4">4
+					</option>
+					<option value="5">5
+					</option>
+					<option value="6">6
+					</option>
+					<option value="7">7
+					</option>
+					<option value="8">8
+					</option>
+					<option value="9">9
+					</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
 			</section>
-			<section class="bg-white mt-10 grid lg:grid-cols-3 lg:grid-row-1 xs:grid-cols-1 row-span-3 gap-3 group text-center">
-				<h1 class="category-title">Menu Saveurs Antique</h1>
-				<h1 class="category-title">Menu Enfant</h1>
-				<h1 class="category-title">Menu Midi</h1>
+
+			<section class="">
+				<i class="fa-solid fa-calendar-days text-white bg-light-brown p-1 rounded-sm"></i>
+				<input type="date" id="start" name="trip-start" value="2023-01-01" min="2023-01-01" max="2023-12-31" class="rounded-sm mb-1" required>
+			</section>
+
+			<section class="mb-5">
+				<i class="fa-solid fa-baby text-white bg-light-brown p-1 rounded-sm"></i>
+				<select name="cover" id="cover-select" class="rounded-sm pl-0 mb-1" required>
+					<option value="" disabled selected>Enfant(s) en bas âge</option>
+					<option value="true">Oui</option>
+					<option value="false">Non</option>
+				</select>
 			</section>
 		</main>
 
@@ -71,7 +100,6 @@
 						quai.antique@gmail.com
 					</p>
 				</div>
-
 			</section>
 		</footer>
 	</body>
