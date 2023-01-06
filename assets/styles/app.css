@@ -35,10 +35,6 @@ a {
     background-position: center;
 }
 
-.category-title {
-    @apply text-xl;
-}
-
 .footer {
     position: absolute;
     right: 0;
