@@ -26,8 +26,8 @@ nav {
     border: none;
 }
 
-a {
-    @apply hover:bg-yellow-900 w-32 py-2 rounded-md;
+.nav-button {
+    @apply w-32 py-2 rounded-md hover:bg-yellow-900;
 }
 
 .background {
@@ -46,11 +46,60 @@ a {
     left: 0;
 }
 
-/* ::-webkit-datetime-edit { padding-right: 3em; }
-::-webkit-datetime-edit-text { padding: 0 0px; }
-::-webkit-inner-spin-button { display: none; } */
+input[type="date"] {
+    background-color: #ffffff;
+    padding: 2px;
+    color: #000000;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    padding-right: 3.7rem;
+}
 
-/* .logo {
-    background-image: url("/assets/resources/img/logo.png");
-} */
+select {
+    background-color: #ffffff;
+    padding: 3px;
+    color: #000000;
+    font-size: 18px;
+    border: none;
+    outline: none;
+}
 
+input[type="date"], select {
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; 
+    box-sizing: content-box;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    color: #95a5a6
+}
+
+::-webkit-datetime-edit-fields-wrapper { 
+    @apply text-center;
+}
+
+::-webkit-datetime-edit-text { 
+    @apply text-center;
+}
+
+::-webkit-calendar-picker-indicator {
+    @apply text-center opacity-0;
+}
+
+.booking-title {
+    font-size: larger;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reservation-button {
+    @apply text-center rounded-md lg:text-lg lg:p-3 lg:px-3 xs:p-5 hover:bg-yellow-900 border-white;
+    background: #493a27;
+}
