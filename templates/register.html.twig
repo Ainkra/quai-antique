@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+		<!--Patch error 404 favicon not found-->
+		<link rel="shortcut icon" href="#">
+		<script src="https://kit.fontawesome.com/abab09da6b.js" crossorigin="anonymous"></script>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+	</head>
+
+	<!--"npm run watch"-->
+	<body class="background min-h-screen">
+		<header class="bg-brown w-auto">
+			<img src="{{ asset('img/logo.png') }}" class="m-auto h-20 w-80 pt-3">
+			<hr class="w-64 flex justify-center m-auto hr-modifier">
+			<nav class="stylisedPolice text-center text-white flex gap-4 justify-center lg:text-xl rounded-md w-auto mx-4 my-auto xs:text-xs">
+				<a href="{{ path('index') }}" class="nav-button">Notre carte</a>
+				<a href="{{ path('booking') }}" class="nav-button">Réservations</a>
+				<a href="{{ path('galery') }}" class="nav-button">Galerie</a>
+				<a href="{{ path('connection') }}" class="nav-button">Connexion</a>
+			</nav>
+		</header>
+		<main class="stylisedPolice m-auto">
+
+		</main>
+
+		<footer class="footer h-26 stylisedPolice flex justify-between align-bottom">
+			<section class="footer bg-brown text-white grid lg:grid-cols-3 gap-3 xs:grid-cols-1">
+				<div class="text-center">
+					<h1 class="lg:text-xl xs:text-lg">Horaire d'ouverture</h1>
+					<p></p>
+				</div>
+
+				<div class="text-center">
+					<h1 class="lg:text-xl xs:text-lg">Adresse</h1>
+					<p class="lg:text-md xs:text-xs">309 Chemin de la Plaine, 74400 Chamonix</p>
+				</div>
+
+				<div class="text-center">
+					<h1 class="lg:text-xl xs:text-lg text-">Contact</h1>
+					<p class="lg:text-md xs:text-xs">
+						<i class="fa-solid fa-phone"></i>
+						+33 06 58 23 65 98
+					</p>
+					<p class="lg:text-md xs:text-xs">
+						<i class="fa-solid fa-fax"></i>
+						+33 09 56 45 25 97
+					</p>
+					<p class="lg:text-md xs:text-xs">
+						<i class="fa-sharp fa-solid fa-envelope"></i>
+						quai.antique@gmail.com
+					</p>
+				</div>
+
+			</section>
+		</footer>
+	</body>
+</html>
