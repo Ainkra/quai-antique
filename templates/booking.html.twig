@@ -28,8 +28,8 @@
 				<a href="" class="nav-button">Connexion</a>
 			</nav>
 		</header>
-		<main class="stylisedPolice bg-brown mt-5 lg:mx-16 xs:mx-0 pt-10">
-			<header class="grid lg:grid-cols-3 xs:grid-cols-1 xs:grid-rows-2">
+		<main class="stylisedPolice bg-brown mt-5 lg:mx-16 xs:mx-0 pt-5">
+			<header class="heading-reserve grid lg:grid-cols-3 lg:grid-rows-1 xs:grid-cols-1 xs:grid-rows-1">
 				<section class="xs:mb-1 lg:text-center xs:text-center">
 					<i class="fa-solid fa-utensils text-white bg-light-brown p-2 rounded-sm"></i>
 					<select name="cover" id="cover-select" class="rounded-sm pl-0 xs:pr-3" required>
@@ -57,33 +57,38 @@
 					</select>
 				</section>
 			</header>
-			<section class="px-5 text-white">
-				<section>
+			<section class="px-5 text-white heading-reserve">
+				<section class="mb-1">
 					<h1 class="text-2xl">Réserver le midi</h1>
-					<nav class="flex-container flex-wrap gap-1">
-						<a class="reservation-button w-1/5">12h00</a>
-						<a class="reservation-button w-1/5">12h15</a>
-						<a class="reservation-button w-1/5">12h30</a>
-						<a class="reservation-button w-1/5">12h45</a>
-						<a class="reservation-button w-1/5">13h00</a>
-						<a class="reservation-button w-1/5">13h15</a>
-						<a class="reservation-button w-1/5">13h30</a>
+					<nav class="flex-container flex-wrap gap-1 flex-shrink">
+						<a class="reservation-button w-1/6">12h00</a>
+						<a class="reservation-button w-1/6">12h15</a>
+						<a class="reservation-button w-1/6">12h30</a>
+						<a class="reservation-button w-1/6">12h45</a>
+						<a class="reservation-button w-1/6">13h00</a>
+						<a class="reservation-button w-1/6">13h15</a>
+						<a class="reservation-button w-1/6">13h30</a>
 					</nav>
 				</section>
-				<br>
 				<section>
 					<h1 class="text-2xl">Réserver le soir</h1>
-					<nav class="flex-container lg:flex-wrap gap-1">
-						<a class="reservation-button w-1/5">19h00</a>
-						<a class="reservation-button w-1/5">19h15</a>
-						<a class="reservation-button w-1/5">19h30</a>
-						<a class="reservation-button w-1/5">19h45</a>
-						<a class="reservation-button w-1/5">20h00</a>
-						<a class="reservation-button w-1/5">20h15</a>
-						<a class="reservation-button w-1/5">20h30</a>
+					<nav class="flex-container flex-wrap gap-1">
+						<a class="reservation-button w-1/6">19h00</a>
+						<a class="reservation-button w-1/6">19h15</a>
+						<a class="reservation-button w-1/6">19h30</a>
+						<a class="reservation-button w-1/6">19h45</a>
+						<a class="reservation-button w-1/6">20h00</a>
+						<a class="reservation-button w-1/6">20h15</a>
+						<a class="reservation-button w-1/6">20h30</a>
 					</nav>
 				</section>
 			</section>
+			<footer class="m-3">
+				<p class="text-sm text-white">Avez-vous des allergies?<p>
+				<input type="text" placeholder="Lait, fruit à coque, oeufs..." class="mb-2">
+				<p class="mt-3 text-center text-white text-xs">
+					<i class="text-red-600">*</i>En cas de retard de plus de 20 minutes, nous nous réservons de considérer cette réservation comme annulée, et de la proposer à d’autres clients. Merci de votre compréhension.</p>
+			<footer>
 		</main>
 		<br>
 		<footer class="footer h-26 stylisedPolice flex justify-between align-bottom mt-5">
