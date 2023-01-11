@@ -15,3 +15,7 @@ booking:
 galery:
     path: /galery
     controller: App\Controller\GaleryController::galery
+
+connection:
+    path: /connection
+    controller: App\Controller\GaleryController::connection
