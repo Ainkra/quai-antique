@@ -11,3 +11,7 @@ index:
 booking:
     path: /booking
     controller: App\Controller\BookingController::booking
+
+galery:
+    path: /galery
+    controller: App\Controller\GaleryController::galery
