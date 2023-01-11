@@ -56,6 +56,13 @@ input[type="date"] {
     padding-right: 3.7rem;
 }
 
+input[type="text"] {
+    font-size: 18px;
+    border: none;
+    outline: none;
+    padding-right: 3.7rem;
+}
+
 select {
     background-color: #ffffff;
     padding: 3px;
@@ -65,7 +72,7 @@ select {
     outline: none;
 }
 
-input[type="date"], select {
+/* input[type="date"], select {
     -ms-box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box; 
@@ -74,7 +81,7 @@ input[type="date"], select {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     color: #95a5a6
-}
+} */
 
 ::-webkit-datetime-edit-fields-wrapper { 
     @apply text-center;
@@ -84,22 +91,18 @@ input[type="date"], select {
     @apply text-center;
 }
 
-::-webkit-calendar-picker-indicator {
-    @apply text-center opacity-0;
-}
-
 .booking-title {
     font-size: larger;
     margin-left: 10px;
     padding: 10px;
 }
 
-.flex-container {
+.flex-container { 
     display: flex;
     flex-wrap: wrap;
 }
 
 .reservation-button {
-    @apply text-center rounded-md lg:text-lg lg:p-3 lg:px-3 xs:p-5 hover:bg-yellow-900 border-white;
+    @apply lg:text-center xs:text-center rounded-md lg:text-lg lg:p-3 xs:p-3 lg:px-3 xs:text-sm border-white hover:bg-yellow-900;
     background: #493a27;
 }
