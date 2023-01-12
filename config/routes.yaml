@@ -18,8 +18,8 @@ galery:
 
 connection:
     path: /connection
-    controller: App\Controller\GaleryController::connection
+    controller: App\Controller\ConnectionController::connection
 
 register:
     path: /register
-    controller: App\Controller\GaleryController::register
+    controller: App\Controller\RegisterController::register
