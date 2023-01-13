@@ -28,15 +28,15 @@
 				<a href="{{ path('connection') }}" class="nav-button">Connexion</a>
 			</nav>
 		</header>
-		<main class="stylisedPolice bg-dark pt-2 lg:mx-16 xs:mx-0 ">
-			<header class="grid lg:grid-cols-4 lg:grid-rows-1 xs:grid-cols-1 xs:grid-rows-1">
-				<section class="lg:text-center xs:text-center mx-">
-					<i class="fa-solid fa-calendar-days text-white bg-light-brown p-2 rounded-sm"></i>
+		<main class="stylisedPolice bg-dark py-8 lg:mx-16 xs:mx-0">
+			<header class="grid lg:grid-cols-3 lg:grid-rows-1 xs:grid-cols-1 xs:grid-rows-1 ">
+				<section class="lg:text-center xs:text-center">
+					<i class="fa-solid fa-tags text-white bg-light-brown p-2 rounded-sm"></i>
 					<input type="text" placeholder="Votre nom de famille" class="rounded-sm mb-1 py-1" required>
 				</section>
 				<section class="xs:mb-1 lg:text-center xs:text-center">
 					<i class="fa-solid fa-utensils text-white bg-light-brown p-2 rounded-sm"></i>
-					<select name="cover" id="cover-select" class="rounded-sm pl-0 xs:pr-3" required>
+					<select name="cover" id="cover-select" class="rounded-sm pl-0 xs:pr-3 selector-booking" required>
 						<option value="" disabled selected>Nombre de couvert</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -48,22 +48,14 @@
 						<option value="8">8</option>
 					</select>
 				</section>
-				<section class="lg:text-center xs:text-center">
+				<section class="lg:text-center xs:text-center mb-4">
 					<i class="fa-solid fa-calendar-days text-white bg-light-brown p-2 rounded-sm"></i>
 					<input type="date" name="booking-time" value="2023-01-01" min="2023-01-01" max="2023-12-31" class="rounded-sm mb-1" required>
-				</section>
-				<section class="xs:mb-1 lg:text-center xs:text-center">
-					<i class="fa-solid fa-baby text-white bg-light-brown p-2 rounded-sm"></i>
-					<select name="cover" id="cover-select" class="rounded-sm pl-0 mb-1" required>
-						<option value="" disabled selected>Enfant(s) en bas âge</option>
-						<option value="true">Oui</option>
-						<option value="false">Non</option>
-					</select>
 				</section>
 			</header>
 			<section class="px-5 text-white">
 				<section class="mb-1">
-					<h1 class="text-2xl">Réserver le midi</h1>
+					<h1 class="lg:text-2xl xs:text-lg">Réserver le midi</h1>
 					<nav class="flex-container flex-wrap gap-1 flex-shrink">
 						<a class="reservation-button w-1/6">12h00</a>
 						<a class="reservation-button w-1/6">12h15</a>
@@ -75,7 +67,7 @@
 					</nav>
 				</section>
 				<section>
-					<h1 class="text-2xl">Réserver le soir</h1>
+					<h1 class="lg:text-2xl xs:text-lg">Réserver le soir</h1>
 					<nav class="flex-container flex-wrap gap-1">
 						<a class="reservation-button w-1/6">19h00</a>
 						<a class="reservation-button w-1/6">19h15</a>
@@ -88,7 +80,7 @@
 				</section>
 			</section>
 			<footer class="m-3">
-				<select name="cover" id="cover-select" class="rounded-sm pl-0 xs:pr-3" required>
+				<select name="cover" id="cover-select" class="rounded-sm pl-0 xs:pr-3 xs:text-lg" required>
 					<option value="" disabled selected>Allergies</option>
 					<option value="eggs">Oeufs</option>
 					<option value="nuts">Fruits à coque</option>
@@ -97,14 +89,16 @@
 					<option value="wheat">Blé et Triticales</option>
 					<option value="other">Autre</option>
 				</select>
-				<section class="text-white text-center mt-3">
+				<section class="text-white text-center my-6 xs:px-5">
 					<button type="submit" class="send-booking-button">
 						Réserver
 					</button>
 				</section>
-				<p class="mt-2 text-white text-xs flex align-middle justify-center">
+				<p class="mt-2 text-white text-xs flex align-middle justify-center text-center">
 					<i class="text-red-600">*</i>
-					En cas de retard de plus de 20 minutes, nous nous réservons de considérer cette réservation comme annulée, et de la proposer à d’autres clients. Merci de votre compréhension.
+					En cas de retard de plus de 20 minutes,
+					nous nous réservons de considérer cette réservation comme annulée,<br>  
+					et de la proposer à d’autres clients. Merci de votre compréhension.
 				</p>
 			<footer>
 		</main>
