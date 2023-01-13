@@ -40,8 +40,8 @@ nav {
 }
 
 .send-booking-button {
-    @apply w-28 py-1 rounded-md hover:bg-yellow-900 text-white;
-    background-color: #906427;
+    @apply w-36 py-1 px-2 rounded-md hover:bg-green-500 text-white lg:text-3xl xs:text-xl;
+    background-color: #83c09a;
 }
 
 .background {
@@ -71,12 +71,12 @@ input[type="date"] {
 }
 
 input[type="text"] {
-    font-size: 15.5px;
+    font-size: 15.8px;
     border: none;
     outline: none;
 }
 
-select {
+.selector-booking {
     background-color: #ffffff;
     padding: 3px;
     color: #000000;
@@ -84,17 +84,6 @@ select {
     border: none;
     outline: none;
 }
-
-/* input[type="date"], select {
-    -ms-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; 
-    box-sizing: content-box;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    color: #95a5a6
-} */
 
 ::-webkit-datetime-edit-fields-wrapper { 
     @apply text-center;
@@ -116,10 +105,20 @@ select {
 }
 
 .reservation-button {
-    @apply lg:text-center xs:text-center rounded-md lg:text-lg lg:p-3 xs:p-3 lg:px-3 xs:text-sm border-white hover:bg-yellow-900;
+    @apply lg:text-center xs:text-center rounded-md lg:text-lg xs:text-sm lg:p-3 xs:p-2 lg:px-2 border-white hover:bg-yellow-900;
     background: #493a27;
 }
 
 .bg-connection {
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text-md {
+    font-size: 1.0rem/* 18px */;
+    line-height: 1.75rem/* 28px */;
+}
+
+.hide-hr {
+    clear: both;
+    visibility: hidden;
 }
