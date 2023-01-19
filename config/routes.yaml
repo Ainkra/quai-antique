@@ -23,3 +23,7 @@ connection:
 register:
     path: /register
     controller: App\Controller\RegisterController::register
+
+galeryManager:
+    path: xl!dkpa6jf89+-/galeryManager
+    controller: App\Controller\GaleryManagerController::galeryManager
