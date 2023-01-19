@@ -31,7 +31,7 @@ nav {
 }
 
 .nav-button {
-    @apply w-32 py-2 rounded-md hover:bg-yellow-900;
+    @apply w-32 py-2 rounded-md hover:bg-yellow-900 !important;
 }
 
 .submit-button {
@@ -118,7 +118,12 @@ input[type="text"] {
     line-height: 1.75rem/* 28px */;
 }
 
-.hide-hr {
-    clear: both;
-    visibility: hidden;
+.carousel-button {
+    @apply hover:bg-slate-300 hover:opacity-30 hover:animate-pulse;
+}
+
+.carousel-image {
+    max-width: 960px;
+    max-height: 500px;
+    object-fit: contain;
 }
