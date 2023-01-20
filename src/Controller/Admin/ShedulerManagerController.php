@@ -9,6 +9,6 @@ class ShedulerManagerController extends AbstractController
 {
     public function shedulerManager() : Response
     {
-        return $this -> render('shedulerManager.html.twig');
+        return $this -> render('Admin/shedulerManager.html.twig');
     }
 }
