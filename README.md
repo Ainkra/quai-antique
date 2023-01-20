@@ -22,10 +22,12 @@ If you have any trouble at setup, follow this guide (TailwindCSS & Symfony):
 
 You can also contact me at mail in top of this text.
 
+5. Done !
+
 # Contribution
 If you want to contribute to the project, contact me at: loisdupasquier21@gmail.com .
 
 # Licensing
 This project is licensed under the MIT License.
 
-5. Done !
+
