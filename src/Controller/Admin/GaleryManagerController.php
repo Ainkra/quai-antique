@@ -9,6 +9,6 @@ class GaleryManagerController extends AbstractController
 {
     public function galeryManager() : Response
     {
-        return $this -> render('galeryManager.html.twig');
+        return $this -> render('Admin/galeryManager.html.twig');
     }
 }
