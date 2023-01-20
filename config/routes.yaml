@@ -25,5 +25,17 @@ register:
     controller: App\Controller\RegisterController::register
 
 galeryManager:
-    path: xl!dkpa6jf89+-/galeryManager
-    controller: App\Controller\GaleryManagerController::galeryManager
+    path: admin/galeryManager
+    controller: App\Controller\Admin\GaleryManagerController::galeryManager
+
+shedulerManager:
+    path: admin/shedulerManager
+    controller: App\Controller\Admin\ShedulerManagerController::shedulerManager
+
+bookingManager:
+    path: admin/bookingManager
+    controller: App\Controller\Admin\BookingManagerController::bookingManager
+
+cardManager:
+    path: admin/cardManager
+    controller: App\Controller\Admin\CardManagerController::cardManager
