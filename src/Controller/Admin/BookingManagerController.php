@@ -9,6 +9,6 @@ class BookingManagerController extends AbstractController
 {
     public function bookingManager() : Response
     {
-        return $this -> render('bookingManager.html.twig');
+        return $this -> render('Admin/bookingManager.html.twig');
     }
 }
