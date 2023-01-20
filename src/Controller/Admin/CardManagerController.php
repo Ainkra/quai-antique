@@ -9,6 +9,6 @@ class CardManagerController extends AbstractController
 {
     public function cardManager() : Response
     {
-        return $this -> render('cardManager.html.twig');
+        return $this -> render('Admin/cardManager.html.twig');
     }
 }
