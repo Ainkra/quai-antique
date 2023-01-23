@@ -20,6 +20,10 @@ nav {
     background-color: #906427;
 }
 
+.bg-light-brown-active {
+    background-color: #d4a460;
+}
+
 .bg-dark {
     background-color: rgba(0, 0, 0, 0.75);
 }
