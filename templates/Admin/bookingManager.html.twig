@@ -14,20 +14,18 @@
 		{% endblock %}
 	</head>
 	<!--"npm run watch"-->
-	<body class="bg-red-300 min-h-screen">
-		<header class="bg-brown w-auto">
-			<nav class="stylisedPolice text-center text-white flex gap-4 justify-center lg:text-xl rounded-md w-auto mx-4 my-auto xs:text-xs">
-				<a href="{{ path('index') }}" class="nav-button">Notre carte</a>
-				<a href="{{ path('booking') }}" class="nav-button">Réservations</a>
-				<a href="{{ path('galery') }}" class="nav-button">Galerie</a>
-				<a href="{{ path('connection') }}" class="nav-button">Connexion</a>
-			</nav>
+	<body class="bg-red-200 min-h-screen">
+		<header class="bg-brown lg:w-52 xs:w-auto lg:h-full xs:h-36 lg:text-xl xs:text-lg">
+		  	<nav class="grid lg:grid-cols-1 xs:grid-cols-2 grid-rows-1 text-center">
+		  	  	<a href="#" class="text-white lg:my-2 xs:my-1 bg-light-brown hover:bg-yellow-600 mx-2 rounded-full">Modifier galerie</a>
+		  	  	<a href="#" class="text-white lg:my-2 xs:my-1 bg-light-brown hover:bg-yellow-600 mx-2 rounded-full">Modifier carte</a>
+		  	  	<a href="#" class="text-white lg:my-2 xs:my-1 bg-light-brown-active hover:bg-yellow-600 mx-2 rounded-full">Modifier horaires</a>
+				<a href="#" class="text-white lg:my-2 xs:my-1 bg-light-brown hover:bg-yellow-600 mx-2 rounded-full">Voir réservations</a>
+				<a href="#" class="text-white lg:mt-6 xs:mt-10 rounded-full bg-red-400 hover:bg-red-500 mx-2">Déconnection</a>
+		  	</nav>
 		</header>
-		<main class="stylisedPolice m-auto bg-connection mt-5 pt-24 pb-24 lg:mx-32 xs:mx-0 text-center">
+		<main>
 
 		</main>
-		<footer class="stylisedPolice ">
-
-		</footer>
 	</body>
 </html>
