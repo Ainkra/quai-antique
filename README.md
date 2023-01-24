@@ -30,4 +30,15 @@ If you want to contribute to the project, contact me at: loisdupasquier21@gmail.
 # Licensing
 This project is licensed under the MIT License.
 
+# Terms of use
+1. Any Digital Campus Live school learner must notify me in case of reuse of the code provided in this repo. 
+I will not be held responsible for any undesirable use of my code (cheating, hacking, etc.)
+
+2. Do not use this code for malicious purposes.
+
+3. Any non-constructive opinion on my project will be automatically ignored. 
+We are developers, a community, I seek like you to evolve, not to be attacked.
+Like "Your code is crap!" ➜ 🗑️
+Give me a advice, let's not waste our time.
+
 
