@@ -131,3 +131,7 @@ input[type="text"] {
     max-height: 500px;
     object-fit: contain;
 }
+
+.admin-background {
+    background-color: #CFB3B3;
+}
