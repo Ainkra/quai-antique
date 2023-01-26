@@ -1,0 +1,47 @@
+/*TAILWIND CSS*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.stylisedPolice {
+    font-family: 'Roboto Slab', serif;
+}
+
+.text-md {
+    font-size: 1.0rem/* 18px */;
+    line-height: 1.75rem/* 28px */;
+}
+
+.bg-brown {
+    background-color: #392C1E;
+}
+
+.bg-light-brown {
+    background-color: #906427;
+}
+
+.bg-light-brown-active {
+    background-color: #d4a460;
+}
+
+.bg-dark {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.hr-modifier {
+    color: #906427;
+    height: 3px;
+    border: none;
+}
+
+.admin-background {
+    background-color: #CFB3B3;
+}
+
+.submit-button-admin {
+    @apply w-32 rounded-md bg-green-300 hover:bg-green-200 text-white py-10;
+}
+
+.nav-button {
+    @apply w-32 py-2 rounded-md hover:bg-yellow-900 !important;
+}
