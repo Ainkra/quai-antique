@@ -117,6 +117,10 @@ input[type="text"] {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.bg-maintenance {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
 .text-md {
     font-size: 1.0rem/* 18px */;
     line-height: 1.75rem/* 28px */;
