@@ -11,4 +11,9 @@ class DefaultController extends AbstractController
     {
         return $this -> render('base.html.twig');
     }
+
+    public function maintenance() : Response
+    {
+        return $this -> render('maintenance.html.twig');
+    }
 }
