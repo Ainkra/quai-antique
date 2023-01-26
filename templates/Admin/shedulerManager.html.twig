@@ -14,18 +14,45 @@
 		{% endblock %}
 	</head>
 	<!--"npm run watch"-->
-	<body class="bg-red-200 min-h-screen">
-		<header class="bg-brown lg:w-52 xs:w-auto lg:h-full xs:h-36 lg:text-xl xs:text-lg">
-		  	<nav class="grid lg:grid-cols-1 xs:grid-cols-2 grid-rows-1 text-center">
-		  	  	<a href="#" class="text-white lg:my-2 xs:my-1 bg-light-brown hover:bg-yellow-600 mx-2 rounded-full">Modifier galerie</a>
-		  	  	<a href="#" class="text-white lg:my-2 xs:my-1 bg-light-brown hover:bg-yellow-600 mx-2 rounded-full">Modifier carte</a>
-		  	  	<a href="#" class="text-white lg:my-2 xs:my-1 bg-light-brown-active hover:bg-yellow-600 mx-2 rounded-full">Modifier horaires</a>
-				<a href="#" class="text-white lg:my-2 xs:my-1 bg-light-brown hover:bg-yellow-600 mx-2 rounded-full">Voir réservations</a>
-				<a href="#" class="text-white lg:mt-6 xs:mt-10 rounded-full bg-red-400 hover:bg-red-500 mx-2">Déconnection</a>
-		  	</nav>
+	<body class="admin-background min-h-screen"> 
+		<header class="bg-brown w-auto lg:py-2 xs:py-1">
+			<nav class="stylisedPolice text-center text-white flex lg:gap-3 xs:gap-1 justify-center align-center lg:text-xl rounded-md w-auto mx-4 my-auto xs:text-xs">
+				<a href="#" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier galerie</a>
+				<a href="#" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier carte</a>
+				<a href="#" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier horaire</a>
+				<a href="#" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Voir réservations</a>
+				<a href="#" class="lg:w-44 xs:w-52 bg-red-400 hover:bg-red-500 transition-all ease-in lg:rounded-lg xs:rounded-none">Déconnection</a>
+			</nav>
 		</header>
-		<main>
+		<main class="m-auto mt-10 flex justify-center">
+		    <section>
+				<p class="lg:text-2xl xs:text-lg text-white block text-left">Lundi<p>
+				<input type="text" placeholder="00:00" class="mb-2 text-black lg:text-2xl xs:text-lg" required>
 
+				<p class="lg:text-2xl xs:text-lg text-white block text-left">Mardi<p>
+				<input type="text" placeholder="00:00" class="mb-3 text-black lg:text-2xl xs:text-lg" required>
+
+				<p class="lg:text-2xl xs:text-lg text-white block text-left">Mercredi<p>
+				<input type="text" placeholder="00:00" class="mb-3 text-black lg:text-2xl xs:text-lg" required>
+
+				<p class="lg:text-2xl xs:text-lg text-white block text-left">Jeudi<p>
+				<input type="text" placeholder="00:00" class="mb-3 text-black lg:text-2xl xs:text-lg" required>
+
+				<p class="lg:text-2xl xs:text-lg text-white block text-left">Vendredi<p>
+				<input type="text" placeholder="00:00" class="mb-3 text-black lg:text-2xl xs:text-lg" required>
+
+				<p class="lg:text-2xl xs:text-lg text-white block text-left">Samedi<p>
+				<input type="text" placeholder="00:00" class="mb-3 text-black lg:text-2xl xs:text-lg" required>
+
+				<p class="lg:text-2xl xs:text-lg text-white block text-left">Dimanche<p>
+				<input type="text" placeholder="00:00" class="mb-3 text-black lg:text-2xl xs:text-lg" required>
+
+				<section class="text-center">
+					<button type="submit" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+						Envoyer
+					</button>
+				</section>
+		    </section>
 		</main>
 	</body>
 </html>
