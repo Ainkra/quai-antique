@@ -9,6 +9,10 @@ index:
     path: /
     controller: App\Controller\DefaultController::index
 
+maintenance:
+    path: /maintenance
+    controller: App\Controller\DefaultController::maintenance
+
 booking:
     path: /booking
     controller: App\Controller\BookingController::booking
