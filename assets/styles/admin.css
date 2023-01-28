@@ -38,10 +38,15 @@
     background-color: #CFB3B3;
 }
 
-.submit-button-admin {
-    @apply w-32 rounded-md bg-green-300 hover:bg-green-200 text-white py-10;
-}
-
 .nav-button {
     @apply w-32 py-2 rounded-md hover:bg-yellow-900 !important;
+}
+
+/*Input type file style*/
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.w-input {
+    width: 19rem;
 }
