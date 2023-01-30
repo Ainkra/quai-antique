@@ -44,3 +44,7 @@ bookingManager:
 cardManager:
     path: admin/cardManager
     controller: App\Controller\Admin\CardManagerController::cardManager
+
+admin:
+    path: /admin
+    controller: App\Controller\ConnectionController::connection
