@@ -20,12 +20,41 @@
 				<a href="{{ path('galeryManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier galerie</a>
 				<a href="{{ path('cardManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier carte</a>
 				<a href="{{ path('shedulerManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier horaire</a>
-				<a href="{{ path('bookingManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Voir réservations</a>
-				<a href="#" class="lg:w-44 xs:w-52 bg-red-400 hover:bg-red-500 transition-all ease-in lg:rounded-lg xs:rounded-none">Déconnection</a>
+				<a href="{{ path('bookingManager') }}" class="lg:w-44 xs:w-52 bg-light-brown-active hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Voir réservations</a>
+				<a href="{{ path('connection') }}" class="lg:w-44 xs:w-52 bg-red-400 hover:bg-red-500 transition-all ease-in lg:rounded-lg xs:rounded-none">Déconnection</a>
 			</nav>
 		</header>
-		<main>
-
+		<main class="flex justify-center items-center flex-col mt-10">
+			<label class="block text-white font-bold mb-2 text-2xl" for="entree1">Définir le maximum de convive</label>
+			<input type="number" placeholder="Nombre" class="mb-2 text-black lg:text-2xl xs:text-lg" required>
 		</main>
+		<section class="text-center mt-10">
+			<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+				Envoyer
+			</button>
+		</section>
+		<footer class="flex justify-center">
+			<table class="table-auto text-white mt-10">
+			  <thead>
+			    <tr>
+			      <th class="px-4 py-2 lg:text-2xl xs:text-lg">Nom de famille</th>
+			      <th class="px-4 py-2 lg:text-2xl xs:text-lg">Nombre de convives</th>
+			      <th class="px-4 py-2 lg:text-2xl xs:text-lg">Heure</th>
+			    </tr>
+			  </thead>
+				<tbody>
+				  <tr>
+				    <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">Doe</td>
+				    <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">2</td>
+				    <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">12h00</td>
+				  </tr>
+				  <tr>
+				    <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">Doe</td>
+				    <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">2</td>
+				    <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">12h00</td>
+				  </tr>
+				</tbody>
+			</table>
+		</footer>
 	</body>
 </html>
