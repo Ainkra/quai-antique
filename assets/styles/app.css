@@ -58,10 +58,11 @@ nav {
 }
 
 .footer {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
+    width: 100%;
 }
 
 input[type="date"] {
@@ -138,4 +139,9 @@ input[type="text"] {
 
 .admin-background {
     background-color: #CFB3B3;
+}
+
+.category-title {
+    @apply lg:text-2xl xs:text-lg font-bold;
+    color: #906427;
 }
