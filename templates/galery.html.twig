@@ -16,54 +16,66 @@
 
 	<!--"npm run watch"-->
 	<body class="background min-h-screen">
-		<header class="bg-brown w-auto">
+		<header class="bg-brown w-auto mb-28">
 			<img src="{{ asset('img/logo.png') }}" class="m-auto h-20 w-80 pt-3">
 			<nav class="stylisedPolice text-center text-white flex gap-4 justify-center lg:text-xl rounded-md w-auto mx-4 my-auto xs:text-xs">
 				<a href="{{ path('index') }}" class="nav-button transition-all ease-in">Notre carte</a>
-				<a href="{{ path('booking') }}" class="nav-button transition-all ease-in">Réservations</a>
 				<a href="{{ path('galery') }}" class="nav-button transition-all ease-in">Galerie</a>
+				<a href="{{ path('booking') }}" class="nav-button transition-all ease-in">Réservations</a>
 				<a href="{{ path('connection') }}" class="nav-button transition-all ease-in">Connexion</a>
 			</nav>
 		</header>
-		<main class="relative min-h-screen flex justify-center items-center">
-			<section class="relative flex flex-col items-center lg:-mt-24 xs:-mt-48">
-		    	<img src="{{ asset('img/galery/2.jpg') }}" class="object-cover w-full carousel-image">
-		    	<button class="absolute inset-y-0 right-0 mr-4">
-					<i class="fas fa-chevron-right fa-3x h-6 w-6 text-white hover:text-slate-400"></i>
-		    	</button>
-		    	<button class="absolute inset-y-0 left-0 ml-2">
-					<i class="fas fa-chevron-left fa-3x h-6 w-6 text-white hover:text-slate-400"></i>
-		    	</button>
-		    	<p class="absolute bottom-0 text-center text-white lg:text-4xl xs:text-2xl">Tartiflette</p>
-			</section>
+		<main class="main-galery relative min-h-screen flex justify-center items-center lg:-mt-10 xs:-mt-0 lg:pb-0 xs:pb-48 text-white">
+		  <section class="flex flex-wrap gap-2">
+		    <div class="w-full lg:w-3/12 xs:w-full p-3">
+		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 1" class="img-galery">
+		      <figcaption class="text-center description">Fondue savoyarde</figcaption>
+		    </div>
+		    <div class="w-full lg:w-3/12 xs:w-full p-3">
+		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 2" class="img-galery">
+		      <figcaption class="text-center description">Raclette</figcaption>
+		    </div>
+		    <div class="w-full lg:w-3/12 xs:w-full p-3">
+		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 3" class="img-galery">
+		      <figcaption class="text-center description">Tarte Tatin</figcaption>
+		    </div>
+		    <div class="w-full lg:w-3/12 xs:w-full p-3">
+		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 4" class="img-galery">
+		      <figcaption class="text-center description">Crème brûlée</figcaption>
+		    </div>
+		    <div class="w-full lg:w-3/12 xs:w-full p-3">
+		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 5" class="img-galery">
+		      <figcaption class="text-center description">Cheesecake</figcaption>
+		    </div>
+		  </section>
 		</main>
-		<footer class="stylisedPolice">
-			<section class="footer bg-brown text-white grid lg:grid-cols-3 gap-3 xs:grid-cols-1">
-				<div class="text-center">
-					<h1 class="lg:text-xl xs:text-lg">Horaire d'ouverture</h1>
-					<p></p>
-				</div>
-				<div class="text-center">
-					<h1 class="lg:text-xl xs:text-lg">Adresse</h1>
-					<p class="lg:text-md xs:text-xs">309 Chemin de la Plaine, 74400 Chamonix</p>
-				</div>
-				<div class="text-center">
-					<h1 class="lg:text-xl xs:text-lg text-">Contact</h1>
-					<p class="lg:text-md xs:text-xs">
-						<i class="fa-solid fa-phone"></i>
-						+33 06 58 23 65 98
-					</p>
-					<p class="lg:text-md xs:text-xs">
-						<i class="fa-solid fa-fax"></i>
-						+33 09 56 45 25 97
-					</p>
-					<p class="lg:text-md xs:text-xs">
-						<i class="fa-sharp fa-solid fa-envelope"></i>
-						quai.antique@gmail.com
-					</p>
-				</div>
-			</section>
+		<footer class="stylisedPolice absolute z-0">
+		  <section class="footer bg-brown text-white grid lg:grid-cols-3 gap-3 xs:grid-cols-1">
+		    <div class="text-center">
+		      <h1 class="lg:text-xl xs:text-lg">Horaire d'ouverture</h1>
+		      <p></p>
+		    </div>
+		    <div class="text-center">
+		      <h1 class="lg:text-xl xs:text-lg">Adresse</h1>
+		      <p class="lg:text-md xs:text-xs">309 Chemin de la Plaine, 74400 Chamonix</p>
+		    </div>
+		    <div class="text-center">
+		      <h1 class="lg:text-xl xs:text-lg text-">Contact</h1>
+		      <p class="lg:text-md xs:text-xs">
+		        <i class="fa-solid fa-phone"></i>
+		        +33 06 58 23 65 98
+		      </p>
+		      <p class="lg:text-md xs:text-xs">
+		        <i class="fa-solid fa-fax"></i>
+		        +33 09 56 45 25 97
+		      </p>
+		      <p class="lg:text-md xs:text-xs">
+		        <i class="fa-sharp fa-solid fa-envelope"></i>
+		        quai.antique@gmail.com
+		      </p>
+		    </div>
+		  </section>
 		</footer>
-		<script src="{{ asset('js/carousel.js') }}"></script>
+		<script src="{{ asset('javascript/carousel.js') }}"></script>
 	</body>
 </html>
