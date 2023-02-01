@@ -167,3 +167,30 @@ input[type="text"] {
     @apply text-lg font-bold ;
     color: #b48849;
 }
+
+img.last-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.main-galery {
+    min-height: calc(100vh - 76px);
+ }
+
+ figcaption {
+    @apply text-center mb-5 mx-auto;
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.33);
+
+}
+
+.img-galery {
+    position: relative;
+}
+  
+  
+  
+  
+  
