@@ -142,6 +142,28 @@ input[type="text"] {
 }
 
 .category-title {
-    @apply lg:text-2xl xs:text-lg font-bold;
+    @apply text-2xl font-bold;
     color: #906427;
+}
+
+.dish-title {
+    @apply text-lg;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+.dish-price {
+    @apply text-lg ml-5 text-red-400;
+    vertical-align: top;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.dish-description {
+    @apply text-xs mb-3;
+}
+
+.dish-title-menu  {
+    @apply text-lg font-bold ;
+    color: #b48849;
 }
