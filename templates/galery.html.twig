@@ -15,66 +15,85 @@
 	</head>
 
 	<!--"npm run watch"-->
-	<body class="background min-h-screen">
-		<header class="bg-brown w-auto mb-28">
+	<body class="bg-zinc-800 relative">
+		<header class="bg-brown w-auto">
 			<img src="{{ asset('img/logo.png') }}" class="m-auto h-20 w-80 pt-3">
-			<nav class="stylisedPolice text-center text-white flex gap-4 justify-center lg:text-xl rounded-md w-auto mx-4 my-auto xs:text-xs">
+			<nav class="stylisedPolice text-center text-white flex gap-4 justify-center lg:text-xl xs:text-md rounded-sm w-auto mx-4 my-auto pb-1">
 				<a href="{{ path('index') }}" class="nav-button transition-all ease-in">Notre carte</a>
 				<a href="{{ path('galery') }}" class="nav-button transition-all ease-in">Galerie</a>
 				<a href="{{ path('booking') }}" class="nav-button transition-all ease-in">Réservations</a>
 				<a href="{{ path('connection') }}" class="nav-button transition-all ease-in">Connexion</a>
 			</nav>
 		</header>
-		<main class="main-galery relative min-h-screen flex justify-center items-center lg:-mt-10 xs:-mt-0 lg:pb-0 xs:pb-48 text-white">
-		  <section class="flex flex-wrap gap-2">
-		    <div class="w-full lg:w-3/12 xs:w-full p-3">
-		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 1" class="img-galery">
-		      <figcaption class="text-center description">Fondue savoyarde</figcaption>
+		<main class="relative text-white mt-5 lg:mx-5 xs:mx-0 lg:mb-28 xs:mb-48">
+		  <section class="grid lg:grid-cols-3 xs:grid-cols-1 lg:grid-rows-3 xs:grid-rows-1 gap-4">
+		    <div class="relative">
+		      <img src="{{ asset('img/galery/1.jpg') }}" alt="Image plat 1" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 1</div>
 		    </div>
-		    <div class="w-full lg:w-3/12 xs:w-full p-3">
-		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 2" class="img-galery">
-		      <figcaption class="text-center description">Raclette</figcaption>
+		    <div class="relative">
+		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image plat 2" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 2</div>
 		    </div>
-		    <div class="w-full lg:w-3/12 xs:w-full p-3">
-		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 3" class="img-galery">
-		      <figcaption class="text-center description">Tarte Tatin</figcaption>
+		    <div class="relative">
+		      <img src="{{ asset('img/galery/3.jpg') }}" alt="Image plat 3" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 3</div>
+			</div>
+		    <div class="relative">
+		      <img src="{{ asset('img/galery/1.jpg') }}" alt="Image plat 1" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 1</div>
 		    </div>
-		    <div class="w-full lg:w-3/12 xs:w-full p-3">
-		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 4" class="img-galery">
-		      <figcaption class="text-center description">Crème brûlée</figcaption>
+		    <div class="relative">
+		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image plat 2" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 2</div>
 		    </div>
-		    <div class="w-full lg:w-3/12 xs:w-full p-3">
-		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image 5" class="img-galery">
-		      <figcaption class="text-center description">Cheesecake</figcaption>
+		    <div class="relative">
+		      <img src="{{ asset('img/galery/3.jpg') }}" alt="Image plat 3" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 3</div>
+			</div>
+			<div class="relative">
+		      <img src="{{ asset('img/galery/1.jpg') }}" alt="Image plat 1" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 1</div>
 		    </div>
+		    <div class="relative">
+		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image plat 2" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 2</div>
+		    </div>
+		    <div class="relative">
+		      <img src="{{ asset('img/galery/3.jpg') }}" alt="Image plat 3" class="object-cover h-full w-full">
+		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 3</div>
+			</div>
 		  </section>
 		</main>
-		<footer class="stylisedPolice absolute z-0">
-		  <section class="footer bg-brown text-white grid lg:grid-cols-3 gap-3 xs:grid-cols-1">
-		    <div class="text-center">
-		      <h1 class="lg:text-xl xs:text-lg">Horaire d'ouverture</h1>
-		      <p></p>
-		    </div>
-		    <div class="text-center">
-		      <h1 class="lg:text-xl xs:text-lg">Adresse</h1>
-		      <p class="lg:text-md xs:text-xs">309 Chemin de la Plaine, 74400 Chamonix</p>
-		    </div>
-		    <div class="text-center">
-		      <h1 class="lg:text-xl xs:text-lg text-">Contact</h1>
-		      <p class="lg:text-md xs:text-xs">
-		        <i class="fa-solid fa-phone"></i>
-		        +33 06 58 23 65 98
-		      </p>
-		      <p class="lg:text-md xs:text-xs">
-		        <i class="fa-solid fa-fax"></i>
-		        +33 09 56 45 25 97
-		      </p>
-		      <p class="lg:text-md xs:text-xs">
-		        <i class="fa-sharp fa-solid fa-envelope"></i>
-		        quai.antique@gmail.com
-		      </p>
-		    </div>
-		  </section>
+		<footer class="footer stylisedPolice mt-14">
+			<section class="bg-brown text-white grid lg:grid-cols-3 gap-3 xs:grid-cols-1">
+				<div class="text-center">
+					<h1 class="lg:text-xl xs:text-lg">Horaire d'ouverture</h1>
+					<p></p>
+				</div>
+
+				<div class="text-center">
+					<h1 class="lg:text-xl xs:text-lg">Adresse</h1>
+					<p class="lg:text-md xs:text-xs">309 Chemin de la Plaine, 74400 Chamonix</p>
+				</div>
+
+				<div class="text-center">
+					<h1 class="lg:text-xl xs:text-lg text-">Contact</h1>
+					<p class="lg:text-md xs:text-xs">
+						<i class="fa-solid fa-phone"></i>
+						+33 06 58 23 65 98
+					</p>
+					<p class="lg:text-md xs:text-xs">
+						<i class="fa-solid fa-fax"></i>
+						+33 09 56 45 25 97
+					</p>
+					<p class="lg:text-md xs:text-xs">
+						<i class="fa-sharp fa-solid fa-envelope"></i>
+						quai.antique@gmail.com
+					</p>
+				</div>
+
+			</section>
 		</footer>
 		<script src="{{ asset('javascript/carousel.js') }}"></script>
 	</body>
