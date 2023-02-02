@@ -1,10 +1,14 @@
-const images = document.querySelectorAll("img");
+const images = document.querySelectorAll('.grid > div');
 
-images.forEach(img => {
-  img.addEventListener("mouseenter", function() {
-    this.nextElementSibling.style.display = "block";
+images.forEach(image => {
+  const hidden = image.querySelector('.hidden');
+  if (!hidden) return;
+
+  image.addEventListener('mouseenter', () => {
+    hidden.style.display = 'block';
   });
-  img.addEventListener("mouseleave", function() {
-    this.nextElementSibling.style.display = "none";
+
+  image.addEventListener('mouseleave', () => {
+    hidden.style.display = 'none';
   });
 });
