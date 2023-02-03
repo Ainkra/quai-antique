@@ -20,22 +20,12 @@ nav {
     background-color: #906427;
 }
 
-.bg-light-brown-active {
-    background-color: #d4a460;
-}
-
 .bg-dark {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-.hr-modifier {
-    color: #906427;
-    height: 3px;
-    border: none;
-}
-
 .nav-button {
-    @apply w-32 py-2 rounded-md hover:bg-yellow-900 !important;
+    @apply w-32 py-2 rounded-md hover:bg-yellow-900;
 }
 
 .submit-button {
@@ -65,6 +55,7 @@ nav {
     width: 100%;
 }
 
+/*MODIFY INPUTS*/
 input[type="date"] {
     background-color: #ffffff;
     padding: 2px;
@@ -81,6 +72,7 @@ input[type="text"] {
     outline: none;
 }
 
+/*MODIFY NUMBER INPUT*/
 .selector-booking {
     background-color: #ffffff;
     padding: 3px;
@@ -90,18 +82,13 @@ input[type="text"] {
     outline: none;
 }
 
+/*MODIFY DATE INPUT*/
 ::-webkit-datetime-edit-fields-wrapper { 
     @apply text-center;
 }
 
 ::-webkit-datetime-edit-text { 
     @apply text-center;
-}
-
-.booking-title {
-    font-size: larger;
-    margin-left: 10px;
-    padding: 10px;
 }
 
 .flex-container { 
@@ -122,23 +109,10 @@ input[type="text"] {
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
+/*NEW TEXT SIZE*/
 .text-md {
     font-size: 1.0rem/* 18px */;
     line-height: 1.75rem/* 28px */;
-}
-
-.carousel-button {
-    @apply hover:bg-slate-300 hover:opacity-30 hover:animate-pulse;
-}
-
-.carousel-image {
-    max-width: 960px;
-    max-height: 500px;
-    object-fit: contain;
-}
-
-.admin-background {
-    background-color: #CFB3B3;
 }
 
 .category-title {

@@ -35,20 +35,11 @@
 }
 
 .admin-background {
-    background-color: #CFB3B3;
+    background-color: #ad9696;
 }
 
 .nav-button {
     @apply w-32 py-2 rounded-md hover:bg-yellow-900 !important;
-}
-
-/*Input type file style*/
-.custom-file-input::-webkit-file-upload-button {
-    visibility: hidden;
-}
-
-.w-input {
-    width: 19rem;
 }
 
 .thumbnail {
