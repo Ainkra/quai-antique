@@ -35,35 +35,6 @@
 				<a href="{{ path('connection') }}" class="text-sm font-bold hover:text-orange-200">Connectez-vous !</a>
 			</section>
 		</main>
-		<footer class="stylisedPolice ">
-			<section class="footer bg-brown text-white grid lg:grid-cols-3 gap-3 xs:grid-cols-1">
-				<div class="text-center">
-					<h1 class="lg:text-xl xs:text-lg">Horaire d'ouverture</h1>
-					<p></p>
-				</div>
-
-				<div class="text-center">
-					<h1 class="lg:text-xl xs:text-lg">Adresse</h1>
-					<p class="lg:text-md xs:text-xs">309 Chemin de la Plaine, 74400 Chamonix</p>
-				</div>
-
-				<div class="text-center">
-					<h1 class="lg:text-xl xs:text-lg text-">Contact</h1>
-					<p class="lg:text-md xs:text-xs">
-						<i class="fa-solid fa-phone"></i>
-						+33 06 58 23 65 98
-					</p>
-					<p class="lg:text-md xs:text-xs">
-						<i class="fa-solid fa-fax"></i>
-						+33 09 56 45 25 97
-					</p>
-					<p class="lg:text-md xs:text-xs">
-						<i class="fa-sharp fa-solid fa-envelope"></i>
-						quai.antique@gmail.com
-					</p>
-				</div>
-
-			</section>
-		</footer>
+		{% include 'footer.html.twig' %}
 	</body>
 </html>
