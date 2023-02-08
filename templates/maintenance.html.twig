@@ -16,15 +16,7 @@
 
 	<!--"npm run watch"-->
 	<body class="background min-h-screen">
-		<header class="bg-brown w-auto">
-			<img src="{{ asset('img/logo.png') }}" class="m-auto h-20 w-80 pt-3">
-			<nav class="stylisedPolice text-center text-white flex gap-4 justify-center lg:text-xl xs:text-md rounded-sm w-auto mx-4 my-auto pb-1">
-				<a href="{{ path('index') }}" class="nav-button transition-all ease-in">Notre carte</a>
-				<a href="{{ path('galery') }}" class="nav-button transition-all ease-in">Galerie</a>
-				<a href="{{ path('booking') }}" class="nav-button transition-all ease-in">Réservations</a>
-				<a href="{{ path('connection') }}" class="nav-button transition-all ease-in">Connexion</a>
-			</nav>
-		</header>
+		{% include 'base.html.twig' %}
 		<main class="stylisedPolice m-auto text-white flex justify-center align-middle bg-maintenance lg:mt-24 xs:mt-0">
 			<section class="text-center w-auto h-auto lg:p-28 xs:p-14">
                 <p class="text-6xl pb-5 text-gray-400">Oops !</<p>
