@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/galeryManager", name="admin_bookingManager")
+ * @Route("/admin/bookingManager", name="admin_bookingManager")
  */
 class BookingManagerController extends AbstractController
 {
