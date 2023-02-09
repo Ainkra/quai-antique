@@ -1,0 +1,2 @@
+# Create quai_antique database
+CREATE DATABASE IF NOT EXISTS quai_antique
