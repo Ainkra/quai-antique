@@ -30,21 +30,21 @@ register:
     controller: App\Controller\RegisterController::register
 
 galeryManager:
-    path: admin/galeryManager
+    path: panel/galeryManager
     controller: App\Controller\Admin\GaleryManagerController::galeryManager
 
 shedulerManager:
-    path: admin/shedulerManager
+    path: panel/shedulerManager
     controller: App\Controller\Admin\ShedulerManagerController::shedulerManager
 
 bookingManager:
-    path: admin/bookingManager
+    path: panel/bookingManager
     controller: App\Controller\Admin\BookingManagerController::bookingManager
 
 cardManager:
-    path: admin/cardManager
+    path: panel/cardManager
     controller: App\Controller\Admin\CardManagerController::cardManager
 
-admin:
-    path: /admin
+panel:
+    path: /panel
     controller: App\Controller\ConnectionController::connection
