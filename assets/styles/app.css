@@ -72,6 +72,16 @@ input[type="text"] {
     outline: none;
 }
 
+.register-guest-field {
+    font-size: 15.8px;
+    padding-right: 2rem;
+}
+
+.register-allergies-field {
+    font-size: 15.8px;
+    padding-right: 4.1rem;
+}
+
 /*MODIFY NUMBER INPUT*/
 .selector-booking {
     background-color: #ffffff;
@@ -144,4 +154,19 @@ input[type="text"] {
   
 .hidden {
     display: none;
+}
+
+#notification {
+    background-color: #4CAF50;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+  
+.hidden {
+  display: none;
 }
