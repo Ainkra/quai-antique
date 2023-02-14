@@ -3,27 +3,46 @@
 	<body class="background min-h-screen">
 		{% include 'Components/header.html.twig' %}
         {% block body %}
-            {{ form_start(form) }}
+            {{ form_start(register) }}
 		    <main class="stylisedPolice m-auto bg-connection mt-5 pt-24 pb-24 lg:mx-32 xs:mx-0 text-center">
 		    	<section class="inline-block text-center">
 		    		<p class="text-md text-white block text-left">Email<i class="text-red-600">*</i></p>
-		    		{{ form_widget(form.email) }}
+		    		{{ form_widget(register.email) }}
 		    		<p class="text-md text-white block text-left">Mot de passe<i class="text-red-600">*</i></p>
-		    		{{ form_widget(form.password) }}
+		    		{{ form_widget(register.password) }}
 		    		<p class="text-md text-white block text-left">Répétez le mot de passe<i class="text-red-600">*</i></p>
-		    		{{ form_widget(form.confirm) }}
-		    		<p class="text-md text-white block text-left">Téléphone<i class="text-red-600">*</i></p>
-		    		{{ form_widget(form.tel) }}
+		    		{{ form_widget(register.confirm) }}
+		    		<p class="text-md text-white block text-left">Nombre de couverts<i class="text-red-600">*</i></p>
+		    		{{ form_widget(register.guestNumber) }}
+					<p class="text-md text-white block text-left">Allergies<i class="text-red-600">*</i></p>
+		    		{{ form_widget(register.allergies) }}
 		    	</section>
 		    	<section class="text-white">
 		    		<button type="submit" class="submit-button mt-5">
 		    			S'enregistrer
 		    		</button>
 		    		<p class="text-xs mt-2">Vous possédez déjà un compte?</p>
-		    		<a href="{{ path('connection') }}" class="text-sm font-bold hover:text-orange-200">Connectez-vous !</a>
+		    		{# <a href="{{ path('connection') }}" class="text-sm font-bold hover:text-orange-200">Connectez-vous !</a> #}
 		    	</section>
 		    </main>
-            {{ form_end(form) }}
+            {{ form_end(register) }}
+            
+            <div id="notification" class="hidden">
+  				<p>Les données ont été enregistrées avec succès !</p>
+			</div>
+			{% if message is not null %}
+    			<div class="notification">
+    			    {{ message }}
+    			</div>
+			{% endif %}
+			<script>
+				var notification = document.getElementById("notification");
+				notification.classList.remove("hidden");
+				
+				setTimeout(function() {
+				  notification.classList.add("hidden");
+				}, 5000);
+			</script>
         {% endblock %}
     </body>
     {% include 'Components/footer.html.twig' %}
