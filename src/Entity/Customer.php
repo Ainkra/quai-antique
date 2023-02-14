@@ -5,23 +5,34 @@ namespace App\Entity;
 use App\Repository\CustomerRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: CustomerRepository::class)]
-class Customer
+class Customer implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column]
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $phone = null;
+    #[ORM\Column]
+    private ?int $guestNumber = null;
+
+    #[ORM\Column(type: Types::ARRAY)]
+    private array $allergies = [];
 
     public function getId(): ?int
     {
@@ -40,7 +51,39 @@ class Customer
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -52,14 +95,35 @@ class Customer
         return $this;
     }
 
-    public function getPhone(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
     {
-        return $this->phone;
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
-    public function setPhone(string $phone): self
+    public function getGuestNumber(): ?int
     {
-        $this->phone = $phone;
+        return $this->guestNumber;
+    }
+
+    public function setGuestNumber(int $guestNumber): self
+    {
+        $this->guestNumber = $guestNumber;
+
+        return $this;
+    }
+
+    public function getAllergies(): array
+    {
+        return $this->allergies;
+    }
+
+    public function setAllergies(array $allergies): self
+    {
+        $this->allergies = $allergies;
 
         return $this;
     }
