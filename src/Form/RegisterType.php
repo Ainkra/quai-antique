@@ -3,10 +3,10 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Constraints\Length;
@@ -54,8 +54,43 @@ class RegisterType extends AbstractType
                 ]
             ])
 
-            ->add('tel', TelType::class, [
-                "required" => false,
+            ->add('guestNumber', ChoiceType::class, [
+                'placeholder' => "Nombre de couverts",
+                'attr' => [
+                    'class' => 'register-guest-field',
+                ],
+                'choices' => [
+                    '1 personne' => 1,
+                    '2 personnes' => 2,
+                    '3 personnes' => 3,
+                    '4 personnes' => 4,
+                    '5 personnes' => 5,
+                    '6 personnes' => 6,
+                    '7 personnes' => 7,
+                    '8 personnes' => 8,
+                    // ...
+                ],
+                'multiple' => false,
+                'expanded' => false,
+                "required" => true
+            ])
+            ->add('allergies', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'register-allergies-field',
+                ],
+                'placeholder' => "Allergies",
+                'choices' => [
+                    'Aucune' => 1,
+                    'Oeufs' => 2,
+                    'Fruits à coque' => 3,
+                    'Lait' => 4,
+                    'Moutarde' => 5,
+                    'Blé et Triticales' => 6,
+                    'Autre' => 7,
+                ],
+                'multiple' => true,
+                'expanded' => false,
+                "required" => true
             ])
         ;
     }
