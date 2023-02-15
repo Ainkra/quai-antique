@@ -1,0 +1,27 @@
+{% include "Components/head.html.twig" %}
+<body class="background min-h-screen">
+	{% include 'Components/header.html.twig' %}
+    {% block body %}
+        {{ form_start(connection) }}
+	    <main class="stylisedPolice m-auto bg-connection mt-5 pt-24 pb-24 lg:mx-32 xs:mx-0 text-center">
+	    	<section class="inline-block text-center">
+	    		<p class="text-md text-white block text-left">Email<i class="text-red-600">*</i></p>
+	    		{{ form_widget(connection.email) }}
+	    		<p class="text-md text-white block text-left">Mot de passe<i class="text-red-600">*</i></p>
+	    		{{ form_widget(connection.password) }}
+	    	</section>
+	    	<section class="text-white">
+	    		<button type="submit" class="submit-button mt-5">
+	    			Se connecter
+	    		</button>
+	    		<p class="text-xs mt-2">Vous n'avez pas encore de compte?</p>
+	    		<a href="{{ path('app_register') }}" class="text-sm font-bold hover:text-orange-200">Cliquez ici !</a>
+				{# {% if message is defined %}
+				    <p class="message-{{ messageType }}">{{ message }}</p>
+				{% endif %} #}
+	    	</section>
+	    </main>
+        {{ form_end(connection) }}
+    {% endblock %}
+</body>
+{% include 'Components/footer.html.twig' %}
