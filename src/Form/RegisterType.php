@@ -99,7 +99,7 @@ class RegisterType extends AbstractType
     {
         $resolver->setDefaults([
             'csrf_protection' => true,
-            'invalid_message' => 'Veuillez vérifier vos informations.',
+            'invalid_message' => 'Identifiants invalides.',
         ]);
     }
 }
