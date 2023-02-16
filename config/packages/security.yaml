@@ -9,6 +9,10 @@ security:
             entity:
                 class: App\Entity\Customer
                 property: email
+    security:
+        role_hierarchy:
+            ROLE_ADMIN: [ROLE_USER]
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -17,14 +21,14 @@ security:
             lazy: true
             provider: app_user_provider
             form_login:
-                login_path: login
-                check_path: login
+                login_path: app_connection
+                check_path: app_connection
                 enable_csrf : true
             remember_me:
                 secret : '%kernel.secret%'
                 lifetime : 604800 # 1 weekin seconds
             logout : 
-                path: index
+                path: app_logout
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
