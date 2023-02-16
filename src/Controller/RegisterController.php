@@ -9,28 +9,30 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Form\RegisterType;
 use App\Entity\Customer;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-// use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class RegisterController extends AbstractController
 {
-    // register route
+    // Register route
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher) : Response  
+    public function register(Request $request, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
     {
-        $user = new Customer(); 
+        // We create a new customer
+        $user = new Customer();
         $form = $this->createForm(RegisterType::class);
-        $form->handleRequest($request);
+        $form->handleRequest($request); // Handle request
     
+        // Verify if form is valid and submited
         if ($form->isSubmitted() && $form->isValid()) {
-            $email = $form->get('email')->getData();
-            $formData = $form->getData();
+
+            $email = $form->get('email')->getData(); // Get email data
+            $formData = $form->getData(); // get
             $entityManager = $doctrine->getManager();
             $existingUser = $entityManager->getRepository(Customer::class)->findBy(['email' => $email]);
             $password = $form->get('password')->getData();
             $confirmPassword = $form->get('confirm')->getData();
-
-
+    
             if ($password !== $confirmPassword) {
                 $message = 'Les mots de passe ne sont pas identiques.';
                 $messageType = 'error';
@@ -52,7 +54,7 @@ class RegisterController extends AbstractController
                     'messageType' => $messageType
                 ]);
             }
-
+    
             $hashedPassword = $passwordHasher->hashPassword(
                 $user,
                 $formData['password']
@@ -64,18 +66,30 @@ class RegisterController extends AbstractController
             $user->setAllergies($formData['allergies']);
             $entityManager->persist($user);
             $entityManager->flush();
+    
+            // create and set cookie
+            $response = new Response();
+            $response->headers->setCookie(
+                new Cookie(
+                    'user_email',
+                    $user->getEmail(),
+                    time() + 3600 * 24 * 7 // expire after 1 week
+                )
+            );
             $message = 'Vous avez bien été enregistré(e) !';
             $messageType = 'success';
     
             $form = $this->createForm(RegisterType::class);
-            return $this->render('Register/register.html.twig', [
+            $content = $this->renderView('Register/register.html.twig', [
                 'register' => $form->createView(),
                 'message' => $message,
                 'messageType' => $messageType
             ]);
+
+            $response->setContent($content);
+
+            return $response;
         }
-    
-        // Si le formulaire n'est pas encore soumis ou est invalide, on renvoie une réponse avec le formulaire
         return $this->render('Register/register.html.twig', [
             'register' => $form->createView()
         ]);
