@@ -5,47 +5,25 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Persistence\ManagerRegistry;
-use App\Form\ConnectionType;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use App\Entity\Customer;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-
 class ConnectionController extends AbstractController
 {
     #[Route('/connection', name: 'app_connection')]
-    public function connection(Request $request, ManagerRegistry $doctri): Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        $form = $this->createForm(ConnectionType::class);
+        $customer = $this->getUser();
+        
+        // Récupération de la dernière erreur d'authentification s'il y en a une
+        $error = $authenticationUtils->getLastAuthenticationError();
 
-        $form->handleRequest($request);
+        // Récupération du dernier nom d'utilisateur utilisé
+        $lastUsername = $authenticationUtils->getLastUsername();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $connection = $form->getData();
-            $user = $this->getUserByUsernameOrEmail($connection['username']);
-
-            if (!$user) {
-                // handle error
-            }
-
-            $success = $this->get('security.authentication.manager')
-                ->loginUser('main', $user);
-
-            if ($success) {
-                return $this->redirectToRoute('homepage');
-            }
-
-            // handle error
-        }
+        // Affichage du formulaire de connexion
         return $this->render('Connection/connection.html.twig', [
-            'connection' => $form->createView(),
+            'customer' => $customer,
+            'last_username' => $lastUsername,
+            'error' => $error,
         ]);
-    }
-
-    private function getUserByUsernameOrEmail(string $usernameOrEmail)
-    {
-        return $this->getManager()->getRepository(User::class)
-            ->loadUserByUsername($usernameOrEmail);
     }
 }
