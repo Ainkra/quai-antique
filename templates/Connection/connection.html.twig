@@ -1,27 +1,29 @@
 {% include "Components/head.html.twig" %}
 <body class="background min-h-screen">
 	{% include 'Components/header.html.twig' %}
-    {% block body %}
-        {{ form_start(connection) }}
-	    <main class="stylisedPolice m-auto bg-connection mt-5 pt-24 pb-24 lg:mx-32 xs:mx-0 text-center">
-	    	<section class="inline-block text-center">
-	    		<p class="text-md text-white block text-left">Email<i class="text-red-600">*</i></p>
-	    		{{ form_widget(connection.email) }}
-	    		<p class="text-md text-white block text-left">Mot de passe<i class="text-red-600">*</i></p>
-	    		{{ form_widget(connection.password) }}
-	    	</section>
-	    	<section class="text-white">
-	    		<button type="submit" class="submit-button mt-5">
-	    			Se connecter
-	    		</button>
-	    		<p class="text-xs mt-2">Vous n'avez pas encore de compte?</p>
-	    		<a href="{{ path('app_register') }}" class="text-sm font-bold hover:text-orange-200">Cliquez ici !</a>
-				{# {% if message is defined %}
-				    <p class="message-{{ messageType }}">{{ message }}</p>
-				{% endif %} #}
-	    	</section>
-	    </main>
-        {{ form_end(connection) }}
-    {% endblock %}
+		{% block body %}
+			<form action="{{ path('app_connection') }}" method="post" class="stylisedPolice m-auto bg-connection mt-5 pt-24 pb-24 lg:mx-32 xs:mx-0 text-center">
+				{% if error %}
+			        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			    {% endif %}
+				<section class="inline-block text-center">
+					<label for="username" class="text-md text-white block text-left">Email<i class="text-red-600">*</i></label>
+					<input type="email" name="_username" placeholder="john@doe.com" class="mb-2 text-black" required>
+					<label for="password" class="text-md text-white block text-left">Mot de passe<i class="text-red-600">*</i></label>
+					<input type="password" name="_password" placeholder="Mot de passe" class="mb-3 text-black" required>
+				</section>
+				<section class="text-white">
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					<button type="submit" class="submit-button">
+						Se connecter
+					</button>
+					<p class="text-xs mt-2">Vous ne possédez pas encore de compte?</p>
+					<a href="{{ path('app_register') }}" class="text-sm font-bold hover:text-orange-200">Cliquez ici !</a>
+					{% if customer %}
+					    <p class="message-success">Bonjour, vous êtes déjà connecté(e) !</p>
+					{% endif %}
+				</section>
+			</form>
+		{% include 'Components/footer.html.twig' %}
+	{% endblock %}
 </body>
-{% include 'Components/footer.html.twig' %}
