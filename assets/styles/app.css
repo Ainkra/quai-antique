@@ -107,7 +107,7 @@ input[type="text"] {
 }
 
 .reservation-button {
-    @apply lg:text-center xs:text-center rounded-md lg:text-lg xs:text-sm lg:p-3 xs:p-2 lg:px-2 border-white hover:bg-yellow-900;
+    @apply lg:text-center xs:text-center rounded-md lg:text-lg xs:text-sm lg:p-3 xs:p-2 lg:px-2 border-white hover:bg-yellow-900 w-1/6;
     background: #493a27;
 }
 
