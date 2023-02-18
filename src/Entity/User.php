@@ -18,17 +18,18 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column]
-    private ?int $guestNumber = null;
-
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $bookingTime = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $allergies = null;
+
+    #[ORM\Column]
+    private ?int $guestNumber = null;
+
 
     public function getId(): ?int
     {
@@ -43,18 +44,6 @@ class User
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getGuestNumber(): ?int
-    {
-        return $this->guestNumber;
-    }
-
-    public function setGuestNumber(int $guestNumber): self
-    {
-        $this->guestNumber = $guestNumber;
 
         return $this;
     }
@@ -91,6 +80,18 @@ class User
     public function setAllergies(?string $allergies): self
     {
         $this->allergies = $allergies;
+    
+        return $this;
+    }
+
+    public function getGuestNumber(): ?int
+    {
+        return $this->guestNumber;
+    }
+
+    public function setGuestNumber(int $guestNumber): self
+    {
+        $this->guestNumber = $guestNumber;
 
         return $this;
     }
