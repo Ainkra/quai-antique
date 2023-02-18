@@ -1,0 +1,46 @@
+{% include 'Components/head.html.twig' %}
+
+<body class="background min-h-screen">
+{% include 'Components/header.html.twig' %}
+    <main class="stylisedPolice bg-dark py-16 lg:mx-16 xs:mx-0 mb-14 lg:mt-10 xs:mt-0">
+        <form method="post" action="{{ path('app_booking') }}" class="">
+            {{ form_start(booking) }}
+			
+			<section class="flex lg:flex-row xs:flex-col gap-4 text-center m-auto justify-center">
+				<section class="lg:text-center xs:text-center">
+                	{{ form_widget(booking.name) }}
+            	</section>
+            	<section class="xs:mb-1 lg:text-center xs:text-center">
+            	    {{ form_widget(booking.guestNumber) }}
+            	</section>
+            	<section class="lg:text-center xs:text-center mb-4">
+            	    {{ form_widget(booking.date) }}
+            	</section>
+			</section>
+            <section class="px-5 text-black text-center">
+				<section class="mb-1">
+						<section class="">
+							{{ form_widget(booking.bookingTime) }}
+						</section>
+            	</section>
+				<p  class="text-lg mt-3 text-white">Allergies</p>
+            	<section class="text-lg">
+            	    	{{ form_widget(booking.allergies) }}
+            	</section>
+			</section>
+			<section class="text-white text-center my-6 xs:px-5">
+				<button type="submit" class="send-booking-button">Réserver</button>
+			</section>
+			{% if message is defined %}
+			    <p class="message-{{ messageType }} text-center">{{ message }}</p>
+			{% endif %}
+            {{ form_end(booking) }}
+			<p class="mt-2 text-white text-xs flex align-middle justify-center text-center">
+				<i class="text-red-600">*</i>
+				En cas de retard de plus de 20 minutes,
+				nous nous réservons de considérer la présente réservation comme annulée.<br>
+				<br>
+			</p>
+    </section>
+	{% include 'Components/footer.html.twig' %}
+</body>
