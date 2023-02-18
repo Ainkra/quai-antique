@@ -5,6 +5,7 @@ namespace App\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -74,23 +75,11 @@ class RegisterType extends AbstractType
                 'expanded' => false,
                 "required" => true
             ])
-            ->add('allergies', ChoiceType::class, [
+            ->add('allergies', TextType::class, [
                 'attr' => [
-                    'class' => 'register-allergies-field',
+                    'placeholder' => 'Allergies?'
                 ],
-                'placeholder' => "Allergies",
-                'choices' => [
-                    'Aucune' => 1,
-                    'Oeufs' => 2,
-                    'Fruits à coque' => 3,
-                    'Lait' => 4,
-                    'Moutarde' => 5,
-                    'Blé et Triticales' => 6,
-                    'Autre' => 7,
-                ],
-                'multiple' => true,
-                'expanded' => false,
-                "required" => true
+                "required" => true,
             ])
         ;
     }
