@@ -31,8 +31,8 @@ class Customer implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $guestNumber = null;
 
-    #[ORM\Column(type: Types::ARRAY)]
-    private array $allergies = [];
+    #[ORM\Column(length: 255)]
+    private ?string $allergies = null;
 
     public function getId(): ?int
     {
@@ -116,12 +116,12 @@ class Customer implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getAllergies(): array
+    public function getAllergies(): ?string
     {
         return $this->allergies;
     }
 
-    public function setAllergies(array $allergies): self
+    public function setAllergies(?string $allergies): self
     {
         $this->allergies = $allergies;
 
