@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BookingController extends AbstractController
 {
+    
     #[Route('/booking', name: 'app_booking')]
     public function booking(Request $request, ManagerRegistry $doctrine): Response
     {
@@ -34,7 +35,7 @@ class BookingController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $message = 'Votre réservation est bien enregistrée !';
+            $message = 'Votre réservation est bien envoyée !';
             $messageType = 'success';
 
             $form = $this->createForm(BookingType::class);
@@ -44,11 +45,26 @@ class BookingController extends AbstractController
                 'message' => $message,
                 'messageType' => $messageType
             ]);
-        } else if($user instanceof User) {
-                // Pré-remplissage des champs allergies et guestNumber avec les données de l'utilisateur
-                $form->get('allergies')->setData($user->getAllergies());
-                $form->get('guestNumber')->setData($user->getGuestNumber());
+        } else if ($form->isSubmitted()) {
+            $errors = array();
+            
+            // Get the error messages for each field
+            foreach ($form->getErrors(true) as $error) {
+                if (!isset($errors[$error->getOrigin()->getName()])) {
+                    $errors[$error->getOrigin()->getName()] = array();
+                }
+                $errors[$error->getOrigin()->getName()][] = $error->getMessage();
+            }
+
+            $form = $this->createForm(BookingType::class, $user);
+
+            return $this->render('Booking/booking.html.twig', [
+                'booking' => $form->createView(),
+                'errors' => $errors
+            ]);
         }
+
+        
 
         return $this->render('Booking/booking.html.twig', [
             'booking' => $form->createView()
