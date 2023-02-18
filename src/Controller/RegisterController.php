@@ -67,12 +67,20 @@ class RegisterController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
     
+
             // create and set cookie
             $response = new Response();
+            $cookieData = [
+                'email' => $user->getEmail(),
+                'guestNumber' => $user->getGuestNumber(),
+                'allergies' => $user->getAllergies(),
+            ];
+
+            $cookieValue = json_encode($cookieData);
             $response->headers->setCookie(
                 new Cookie(
-                    'user_email',
-                    $user->getEmail(),
+                    'user_data',
+                    $cookieValue,
                     time() + 3600 * 24 * 7 // expire after 1 week
                 )
             );
