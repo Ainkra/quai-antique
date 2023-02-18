@@ -77,7 +77,7 @@ class BookingType extends AbstractType
             ->add('allergies', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Allergies?',
-                    'class' => 'rounded-sm mb-1 p-5 text-black w-64 h-9'
+                    'class' => 'rounded-sm mb-1 p-5 text-black'
                 ],
                 "required" => true,
             ])
