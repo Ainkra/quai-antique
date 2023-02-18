@@ -11,12 +11,13 @@ use App\Form\RegisterType;
 use App\Entity\Customer;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class RegisterController extends AbstractController
 {
     // Register route
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
+    public function register(Request $request, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher, SessionInterface $session): Response
     {
         // We create a new customer
         $user = new Customer();
@@ -84,6 +85,12 @@ class RegisterController extends AbstractController
                     time() + 3600 * 24 * 7 // expire after 1 week
                 )
             );
+            
+            $allergies = $user->getAllergies();
+            $guestNumber = $user->getGuestNumber();
+            $session->set('allergies', $allergies);
+            $session->set('guestNumber', $guestNumber);
+
             $message = 'Vous avez bien été enregistré(e) !';
             $messageType = 'success';
     
@@ -103,3 +110,5 @@ class RegisterController extends AbstractController
         ]);
     }
 }
+
+
