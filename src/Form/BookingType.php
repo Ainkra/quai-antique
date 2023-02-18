@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class BookingType extends AbstractType
 {
@@ -16,12 +16,16 @@ class BookingType extends AbstractType
 
         $builder
             ->add('name', TextType::class, [
-                'attr' => ['class' => 'form-control']
+                'attr' => [
+                    'class' => 'rounded-sm mb-1 p-5 text-black w-64 h-9 text-input',
+                    'placeholder' => 'Entrez votre nom',
+                ],
+                "required" => true,
             ])
             ->add('guestNumber', ChoiceType::class, [
                 'placeholder' => "Nombre de couverts",
                 'attr' => [
-                    'class' => 'register-guest-field',
+                    'class' => 'rounded-sm pl-0 xs:pr-3 selector-booking',
                 ],
                 'choices' => [
                     '1 personne' => 1,
@@ -32,7 +36,6 @@ class BookingType extends AbstractType
                     '6 personnes' => 6,
                     '7 personnes' => 7,
                     '8 personnes' => 8,
-                    // ...
                 ],
                 'multiple' => false,
                 'expanded' => false,
@@ -41,10 +44,16 @@ class BookingType extends AbstractType
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
                 'html5' => true,
-                'attr' => ['class' => 'form-control']
+                'attr' => [
+                    'class' => 'rounded-sm mb-1'
+                ],
+                "required" => true
             ])
             ->add('bookingTime', ChoiceType::class, [
-                'label' => 'Heure de réservation',
+                'placeholder' => "Heure de réservation",
+                'attr' => [
+                    'class' => 'reservation-button',
+                ],
                 'choices' => [
                     '12:00' => '12:00',
                     '12:15' => '12:15',
@@ -61,28 +70,16 @@ class BookingType extends AbstractType
                     '20:15' => '20:15',
                     '20:30' => '20:30'
                 ],
-                'attr' => [
-                    'class' => 'reservation-button', // Ajoutez la classe CSS ici
-                ],
-                'expanded' => true,
-            ])
-            ->add('allergies', ChoiceType::class, [
-                'attr' => [
-                    'class' => 'register-allergies-field',
-                ],
-                'placeholder' => "Allergies",
-                'choices' => [
-                    'Aucune' => 1,
-                    'Oeufs' => 2,
-                    'Fruits à coque' => 3,
-                    'Lait' => 4,
-                    'Moutarde' => 5,
-                    'Blé et Triticales' => 6,
-                    'Autre' => 7,
-                ],
-                'multiple' => true,
+                'multiple' => false,
                 'expanded' => false,
                 "required" => true
+            ])
+            ->add('allergies', TextType::class, [
+                'attr' => [
+                    'placeholder' => 'Allergies?',
+                    'class' => 'rounded-sm mb-1 p-5 text-black w-64 h-9'
+                ],
+                "required" => true,
             ])
         ;
     }
