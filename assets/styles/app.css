@@ -34,7 +34,7 @@ nav {
 }
 
 .send-booking-button {
-    @apply w-36 py-1 px-2 rounded-md hover:bg-green-500 text-white lg:text-3xl xs:text-xl;
+    @apply w-36 py-1 px-2 rounded-md hover:bg-green-500 text-white lg:text-3xl xs:text-xl transition-all ease-in;
     background-color: #83c09a;
 }
 
@@ -57,17 +57,17 @@ nav {
 
 /*MODIFY INPUTS*/
 input[type="date"] {
+    @apply text-center lg:text-2xl xs:text-xl border-white text-black w-64 h-9;
     background-color: #ffffff;
-    padding: 2px;
-    color: #000000;
-    font-size: 18px;
+    padding: 1.7px;
+    font-size: 17px;
     border: none;
     outline: none;
-    padding-right: 3.7rem;
+    padding-right: 2rem;
 }
 
-input[type="text"] {
-    font-size: 15.8px;
+.text-input {
+    @apply text-center lg:text-2xl xs:text-xl border-white text-black w-64 h-9;
     border: none;
     outline: none;
 }
@@ -84,6 +84,7 @@ input[type="text"] {
 
 /*MODIFY NUMBER INPUT*/
 .selector-booking {
+    @apply w-64 h-9;
     background-color: #ffffff;
     padding: 3px;
     color: #000000;
@@ -107,8 +108,7 @@ input[type="text"] {
 }
 
 .reservation-button {
-    @apply lg:text-center xs:text-center rounded-md lg:text-lg xs:text-sm lg:p-3 xs:p-2 lg:px-2 border-white hover:bg-yellow-900 w-1/6;
-    background: #493a27;
+    @apply text-center lg:text-xl xs:text-lg border-white w-64 text-black h-9;
 }
 
 .bg-connection {
