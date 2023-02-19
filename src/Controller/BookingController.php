@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
+use App\Entity\Booking;
 use App\Form\BookingType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,14 +25,14 @@ class BookingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $doctrine->getManager();
 
-            $user = new User();
-            $user->setName($form['name']->getData()); // Get name data
-            $user->setGuestNumber($form['guestNumber']->getData());
-            $user->setDate($form['date']->getData());
-            $user->setBookingTime(new \DateTimeImmutable($bookingTime));
-            $user->setAllergies($form['allergies']->getData());
+            $booking = new Booking();
+            $booking->setName($form['name']->getData()); // Get name data
+            $booking->setGuestNumber($form['guestNumber']->getData());
+            $booking->setDate($form['date']->getData());
+            $booking->setBookingTime(new \DateTimeImmutable($bookingTime));
+            $booking->setAllergies($form['allergies']->getData());
 
-            $entityManager->persist($user);
+            $entityManager->persist($booking);
             $entityManager->flush();
 
             $message = 'Votre réservation est bien envoyée !';
