@@ -1,20 +1,24 @@
-<!DOCTYPE html>
+{% include 'Components/adminheader.html.twig' %}
+<body class="admin-background min-h-screen">
+    {% block body %}
+        <h1>Connexion administrateur</h1>
 
-<title>Hello AdminController!</title>
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        <form method="post">
+            <div class="form-group">
+                <label for="email">Adresse email</label>
+                <input type="text" id="email" name="_username" class="form-control" value="{{ last_email }}" required>
+            </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="_password" class="form-control" required>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/www/quai-antique/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/www/quai-antique/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+            <button type="submit" class="btn btn-primary">Connexion</button>
+        </form>
+    {% endblock %}
+</body>
