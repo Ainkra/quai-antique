@@ -10,8 +10,5 @@ DROP TABLE customer
 # Create customer table (2)
 CREATE TABLE customer (id INT AUTO_INCREMENT NOT NULL, email LONGTEXT NOT NULL, password LONGTEXT NOT NULL, guest_number INT NOT NULL, allergies LONGTEXT NOT NULL COMMENT('DC2Type:array') PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
 
-# Create user table
-CREATE TABLE `user` (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, guest_number INT NOT NULL, date DATE NOT NULL, booking_time TIME NOT NULL, allergies LONGTEXT DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
-
-# Modify user table
-ALTER TABLE user CHANGE allergies allergies LONGTEXT NOT NULL COMMENT(DC2Type:array)
+# Create Booking table
+CREATE TABLE `booking` (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, date DATE NOT NULL, booking_time TIME NOT NULL, allergies VARCHAR(255) NOT NULL, guest_number INT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
