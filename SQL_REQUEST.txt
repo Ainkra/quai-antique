@@ -1,14 +1,35 @@
 # Create quai_antique database
 CREATE DATABASE IF NOT EXISTS quai_antique
 
-# Create customer table
-CREATE TABLE customer (id INT AUTO_INCREMENT NOT NULL, email LONGTEXT NOT NULL, password LONGTEXT NOT NULL, phone LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
+# writing All ENGINE=InnoDB is not necessarily necessary, 
+# however, it may be useful to do so if I want to ensure 
+# that the table is created with the correct options.
+# In general, it is good practice to specify the storage engine and charset when creating the table, 
+# to avoid potential problems with unexpected default options.
 
-# Delete table
-DROP TABLE customer
-
-# Create customer table (2)
+# Create customer
 CREATE TABLE customer (id INT AUTO_INCREMENT NOT NULL, email LONGTEXT NOT NULL, password LONGTEXT NOT NULL, guest_number INT NOT NULL, allergies LONGTEXT NOT NULL COMMENT('DC2Type:array') PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
 
 # Create Booking table
 CREATE TABLE `booking` (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, date DATE NOT NULL, booking_time TIME NOT NULL, allergies VARCHAR(255) NOT NULL, guest_number INT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
+
+# Create Starter, Dish, Desserts, Drink, Aperitif and Cellar table.
+# I choosed 
+
+# Starter table
+CREATE TABLE aperitif (id INT AUTO_INCREMENT NOT NULL, title LONGTEXT NOT NULL, description LONGTEXT DEFAULT NULL, price LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb04_unicode_ci` ENGINE = InnoDB');
+
+# Cellar table
+CREATE TABLE cellar (id INT AUTO_INCREMENT NOT NULL, title LONGTEXT NOT NULL, description LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+
+# Desserts table
+CREATE TABLE desserts (id INT AUTO_INCREMENT NOT NULL, title LONGTEXT NOT NULL, description LONGTEXT DEFAULT NULL, price LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+
+# Dish table
+CREATE TABLE dish (id INT AUTO_INCREMENT NOT NULL, title LONGTEXT NOT NULL, description LONGTEXT DEFAULT NULL, price LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+
+# Drink table
+CREATE TABLE drink (id INT AUTO_INCREMENT NOT NULL, title LONGTEXT NOT NULL, price LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+
+# Starter table
+CREATE TABLE starter (id INT AUTO_INCREMENT NOT NULL, title LONGTEXT NOT NULL, description LONGTEXT DEFAULT NULL, price LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
