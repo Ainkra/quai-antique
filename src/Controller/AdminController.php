@@ -117,7 +117,7 @@ class AdminController extends AbstractController
 
         if ($starterForm->isSubmitted() && $starterForm->isValid()) {
             $entityManager = $doctrine->getManager();
-            $entityManager->persist($dish);
+            $entityManager->persist($starter);
             $entityManager->flush();
 
             return $this->redirectToRoute('admin');
