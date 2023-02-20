@@ -3,44 +3,21 @@
 	<body class="background min-h-screen">
 		{% include 'Components/header.html.twig' %}
 		<main class="relative text-white mt-5 lg:mx-5 xs:mx-0 lg:mb-28 xs:mb-48">
-		  <section class="grid lg:grid-cols-3 xs:grid-cols-1 lg:grid-rows-3 xs:grid-rows-1 gap-4">
-		    <div class="relative">
-		      <img src="{{ asset('img/galery/1.jpg') }}" alt="Image plat 1" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 1</div>
-		    </div>
-		    <div class="relative">
-		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image plat 2" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 2</div>
-		    </div>
-		    <div class="relative">
-		      <img src="{{ asset('img/galery/3.jpg') }}" alt="Image plat 3" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 3</div>
-			</div>
-		    <div class="relative">
-		      <img src="{{ asset('img/galery/1.jpg') }}" alt="Image plat 1" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 1</div>
-		    </div>
-		    <div class="relative">
-		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image plat 2" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 2</div>
-		    </div>
-		    <div class="relative">
-		      <img src="{{ asset('img/galery/3.jpg') }}" alt="Image plat 3" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 3</div>
-			</div>
-			<div class="relative">
-		      <img src="{{ asset('img/galery/1.jpg') }}" alt="Image plat 1" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 1</div>
-		    </div>
-		    <div class="relative">
-		      <img src="{{ asset('img/galery/2.jpg') }}" alt="Image plat 2" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 2</div>
-		    </div>
-		    <div class="relative">
-		      <img src="{{ asset('img/galery/3.jpg') }}" alt="Image plat 3" class="object-cover h-full w-full">
-		      <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Nom du plat 3</div>
-			</div>
-		  </section>
+			<h1 class="text-center text-4xl text-white mt-10 mb-10">Notre galerie</h1>
+		  	<section class="grid lg:grid-cols-3 xs:grid-cols-1 lg:grid-rows-3 xs:grid-rows-1 gap-4">
+		  	  <div class="relative">
+		  	    <img src="{{ asset('img/galery/1.jpg') }}" alt="Image plat 1" class="object-cover h-full w-full">
+		  	    <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Tartiflette</div>
+		  	  </div>
+		  	  <div class="relative">
+		  	    <img src="{{ asset('img/galery/2.jpg') }}" alt="Image plat 2" class="object-cover h-full w-full">
+		  	    <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Gratin de ravioles</div>
+		  	  </div>
+		  	  <div class="relative">
+		  	    <img src="{{ asset('img/galery/3.jpg') }}" alt="Image plat 3" class="object-cover h-full w-full">
+		  	    <div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">Lasagne à la savoyarde</div>
+				</div>
+		  	</section>
 		</main>
 		{% include 'Components/footer.html.twig' %}
         <script>
