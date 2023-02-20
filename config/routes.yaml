@@ -1,6 +1,10 @@
-# Clear cache command: C:\laragon\bin\php\php-8.1.10-Win32-vs16-x64\php.exe bin/console cache:clear
+# Clear cache command: php bin/console cache:clear
 controllers:
     resource:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+logout:
+    path: /logout
+    methods: GET
