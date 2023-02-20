@@ -33,3 +33,12 @@ CREATE TABLE drink (id INT AUTO_INCREMENT NOT NULL, title LONGTEXT NOT NULL, pri
 
 # Starter table
 CREATE TABLE starter (id INT AUTO_INCREMENT NOT NULL, title LONGTEXT NOT NULL, description LONGTEXT DEFAULT NULL, price LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+
+# Add admin user
+First in VSCODE type this:  php bin/console security:hash-password, and enter your password. Copy your hashed password.
+
+Now, type: USE quai_antique
+
+And enter your SQL request:
+
+INSERT INTO user (email, password, guest_number, allergies, roles) VALUES ('mon-mail@mon-mail.com', 'hashed_password', 'number_of_guest (max 8)', 'mes_allergies', '["ROLE_ADMIN"]');
