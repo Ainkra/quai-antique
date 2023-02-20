@@ -15,19 +15,22 @@ class AperitifType extends AbstractType
         $builder
             ->add('title', TextType::class, [
                 'attr' => [
-                    'class' => 'card-input'
+                    'class' => 'card-input',
+                    'placeholder' => 'titre'
                 ],
                 "required" => true
             ])
             ->add('description', TextType::class, [
                 'attr' => [
-                    'class' => 'card-input'
+                    'class' => 'card-input',
+                    'placeholder' => 'description'
                 ],
                 "required" => true
             ])
             ->add('price', TextType::class, [
                 'attr' => [
-                    'class' => 'card-input'
+                    'class' => 'card-input',
+                    'placeholder' => 'price'
                 ],
                 "required" => true
             ])
