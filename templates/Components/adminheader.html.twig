@@ -1,28 +1,12 @@
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
-		<!--Patch error 404 favicon not found-->
-		<link rel="shortcut icon" href="#">
-		<script src="https://kit.fontawesome.com/abab09da6b.js" crossorigin="anonymous"></script>
-		{% block stylesheets %}
-			{{ encore_entry_link_tags('admin') }}
-		{% endblock %}
-	</head>
-	<!--"npm run watch"-->
-	<body class="admin-background min-h-screen">
-		<header class="bg-brown w-auto lg:py-2 xs:py-1">
-			<nav class="stylisedPolice text-center text-white flex lg:gap-3 xs:gap-1 justify-center align-center lg:text-xl rounded-md w-auto mx-4 my-auto xs:text-xs">
-				<a href="{{ path('galeryManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier galerie</a>
-				<a href="{{ path('cardManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier carte</a>
-				<a href="{{ path('shedulerManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier horaire</a>
-				<a href="{{ path('bookingManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Voir réservations</a>
-				<a href="{{ path('connection') }}" class="lg:w-44 xs:w-52 bg-red-400 hover:bg-red-500 transition-all ease-in lg:rounded-lg xs:rounded-none">Déconnection</a>
-			</nav>
-		</header>
-	</body>
-</html>
+{% include "Components/head.html.twig" %}
+<body class="admin-background min-h-screen">
+	<header class="bg-brown w-auto lg:py-2 xs:py-1">
+		<nav class="stylisedPolice text-center text-white flex lg:gap-3 xs:gap-1 justify-center align-center lg:text-xl rounded-md w-auto mx-4 my-auto xs:text-xs">
+			<a href="{{ path('admin_galeryManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier galerie</a>
+			<a href="{{ path('admin') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier carte</a>
+			<a href="{{ path('admin_shedulerManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Modifier horaire</a>
+			<a href="{{ path('admin_bookingManager') }}" class="lg:w-44 xs:w-52 bg-light-brown hover:bg-yellow-600 transition-all ease-in lg:rounded-lg xs:rounded-none">Voir réservations</a>
+			<a href="{{ logout_path('main') }}" class="lg:w-44 xs:w-52 bg-red-400 hover:bg-red-500 transition-all ease-in lg:rounded-lg xs:rounded-none">Déconnection</a>
+		</nav>
+	</header>
+</body>
