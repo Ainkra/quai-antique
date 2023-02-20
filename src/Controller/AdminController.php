@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\Security\Http\Logout\LogoutHandlerInterface;
 
 class AdminController extends AbstractController
 {
@@ -17,9 +18,7 @@ class AdminController extends AbstractController
     public function adminLogin(Request $request, AuthenticationUtils $authenticationUtils, Security $security) : Response
     {
         if ($security->getUser()) {
-            return $this->render('Admin/admin.html.twig', [
-                'controller_name' => 'GaleryController',
-            ]);
+            return $this->render('Admin/admin.html.twig');
         }
 
         // Get the login error if there is one
@@ -34,25 +33,31 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/cardManager', name: 'admin_cardManager')]
+    #[Route('/admin/cardManager', name: 'admin_redirect')]
     #[IsGranted('ROLE_ADMIN')]
-    public function cardManager(Request $request, AuthenticationUtils $authenticationUtils, Security $security) : Response
+    public function redirectToAdmin()
     {
-        if ($security->getUser()) {
-            return $this->render('Admin/admin.html.twig', [
-                'controller_name' => 'GaleryController',
-            ]);
-        }
+        return $this->redirectToRoute('admin');
+    }
 
-        // Get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-        // Last email entered by the user
-        $lastEmail = $authenticationUtils->getLastUsername();
+    #[Route('/admin/bookingManager', name: 'admin_bookingManager')]
+    #[IsGranted('ROLE_ADMIN')]
+    public function bookingManager()
+    {
+        return $this->render('Admin/bookingManager.html.twig');
+    }
 
-        // Render the login form
-        return $this->render('Admin/admin.html.twig', [
-            'last_email' => $lastEmail,
-            'error' => $error
-        ]);
+    #[Route('/admin/galeryManager', name: 'admin_galeryManager')]
+    #[IsGranted('ROLE_ADMIN')]
+    public function galeryManager()
+    {
+        return $this->render('Admin/galeryManager.html.twig');
+    }
+
+    #[Route('/admin/shedulerManager', name: 'admin_shedulerManager')]
+    #[IsGranted('ROLE_ADMIN')]
+    public function shedulerManager()
+    {
+        return $this->render('Admin/shedulerManager.html.twig');
     }
 }
