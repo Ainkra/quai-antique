@@ -1,0 +1,39 @@
+{% include 'Components/adminhead.html.twig' %}
+{% include 'Components/adminheader.html.twig' %}
+{% block body %}
+    <main class="flex justify-center items-center flex-col mt-10">
+        <label class="block text-white font-bold mb-2 text-2xl" for="entree1">Définir le maximum de convive</label>
+        <input type="number" placeholder="Nombre" class="mb-2 text-black lg:text-2xl xs:text-lg" required>
+    </main>
+    <section class="text-center mt-10">
+        <button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+            Envoyer
+        </button>
+    </section>
+    <footer class="flex justify-center">
+        <table class="table-auto text-white mt-10">
+        <thead>
+            <tr>
+            <th class="px-4 py-2 lg:text-2xl xs:text-lg text-left">Nom de famille</th>
+            <th class="px-4 py-2 lg:text-2xl xs:text-lg text-left">Nombre de convives</th>
+            <th class="px-4 py-2 lg:text-2xl xs:text-lg text-left">Heure</th>
+            <th class="px-4 py-2 lg:text-2xl xs:text-lg text-left">Allergies</th>
+            </tr>
+        </thead>
+            <tbody>
+            <tr>
+                <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">Doe</td>
+                <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">2</td>
+                <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">12h00</td>
+                <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">Non</td>
+            </tr>
+            <tr>
+                <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">Doe</td>
+                <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">2</td>
+                <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">12h00</td>
+                <td class="lg:px-4 lg:py-2 xs:px-8 xs:py-2">Lait</td>
+            </tr>
+            </tbody>
+        </table>
+    </footer>
+{% endblock %}
