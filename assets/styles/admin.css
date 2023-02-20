@@ -59,3 +59,7 @@
     @apply flex mb-5 flex-col items-center;
     margin-bottom: 20px;
 }
+
+.card-input {
+    @apply mb-2 text-black lg:text-2xl xs:text-lg;
+}
