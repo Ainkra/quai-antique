@@ -1,0 +1,9 @@
+{% include "Components/head.html.twig" %}
+<body class="background min-h-screen">
+	{% include 'Components/header.html.twig' %}
+		{% block body %}
+			Vous avez bien été déconnecté(e).<br>
+            À bientôt !
+		{% include 'Components/footer.html.twig' %}
+	{% endblock %}
+</body>
