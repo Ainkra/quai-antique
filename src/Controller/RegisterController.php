@@ -33,7 +33,8 @@ class RegisterController extends AbstractController
             $existingUser = $entityManager->getRepository(Customer::class)->findBy(['email' => $email]);
             $password = $form->get('password')->getData();
             $confirmPassword = $form->get('confirm')->getData();
-    
+            
+            // If password is not equal at password confirmation
             if ($password !== $confirmPassword) {
                 $message = 'Les mots de passe ne sont pas identiques.';
                 $messageType = 'error';
@@ -45,6 +46,7 @@ class RegisterController extends AbstractController
                 ]);
             }
     
+            // If user email is already used
             if ($existingUser) {
                 $message = 'Email déjà utilisé, veuillez en utiliser un autre.';
                 $messageType = 'error';
@@ -55,12 +57,14 @@ class RegisterController extends AbstractController
                     'messageType' => $messageType
                 ]);
             }
-    
+
+            // hashing password
             $hashedPassword = $passwordHasher->hashPassword(
                 $user,
                 $formData['password']
             );
-    
+            
+            // Send data at 
             $user->setPassword($hashedPassword);
             $user->setEmail($formData['email']);
             $user->setGuestNumber($formData['guestNumber']);
