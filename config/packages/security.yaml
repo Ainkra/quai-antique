@@ -26,7 +26,7 @@ security:
                 secret : '%kernel.secret%'
                 lifetime : 604800 # 1 weekin seconds
             logout: 
-                path: app_
+                path: app_logout
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
@@ -37,7 +37,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
     security:
