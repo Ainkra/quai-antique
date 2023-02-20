@@ -1,132 +1,143 @@
-<html lang="fr">
-	{% include "Components/head.html.twig" %}
-	<body class="background min-h-screen">
-		{% include 'Components/header.html.twig' %}
-		<main class="stylisedPolice m-auto">
-			<section class="bg-white mt-10 grid lg:grid-cols-3 lg:grid-row-2 xs:grid-cols-1 row-span-3 gap-3 group text-center">
+
+{% include "Components/head.html.twig" %}
+<body class="background min-h-screen">
+	{% include 'Components/header.html.twig' %}
+	<main class="stylisedPolice m-auto">
+		<section class="bg-white mt-10 grid lg:grid-cols-3 lg:grid-row-2 xs:grid-cols-1 row-span-3 gap-3 group text-center">
+			<section>
+				<h1 class="category-title">Entrées</h1>
+				{% for starter in starter %}
+				    <section>
+				        <div>
+				            <div class="dish-title">{{ starter.title }}<p class="dish-price">{{ starter.price }}€</p></div>
+				            <p class="dish-description">{{ starter.description }}</p>
+				        </div>
+				    </section>
+				{% endfor %}
+			</section>
+			<section>
+				<h1 class="category-title">Desserts</h1>
+				{% for desserts in desserts %}
+				    <section>
+				        <div>
+				            <div class="dish-title">{{ desserts.title }}<p class="dish-price">{{ desserts.price }}€</p></div>
+				            <p class="dish-description">{{ desserts.description }}</p>
+				        </div>
+				    </section>
+				{% endfor %}
+			</section>
+			<section>
+				<h1 class="category-title">Boissons</h1>
+				{% for drink in drink %}
+				    <section>
+				        <div>
+				            <div class="dish-title">{{ drink.title }}<p class="dish-price">{{ drink.price }}€</p></div>
+				            <p class="dish-description"></p>
+				        </div>
+				    </section>
+				{% endfor %}
+			</section>
+			<section>
+				<h1 class="category-title">Plats</h1>
+				{% for dish in dish %}
+				    <section>
+				        <div>
+				            <div class="dish-title">{{ dish.title }}<p class="dish-price">{{ dish.price }}€</p></div>
+				            <p class="dish-description">{{ dish.description }}</p>
+				        </div>
+				    </section>
+				{% endfor %}
+			</section>
+			<section>
+				<h1 class="category-title">Apéritifs</h1>
+				{% for aperitif in aperitif %}
+				    <section>
+				        <div>
+				            <div class="dish-title">{{ aperitif.title }}<p class="dish-price">{{ aperitif.price }}€</p></div>
+				            <p class="dish-description">{{ aperitif.description }}</p>
+				        </div>
+				    </section>
+				{% endfor %}
+			</section>
+			<section>
+				<h1 class="category-title">Notre cave</h1>
+				{% for cellar in cellar %}
+				    <section>
+				        <div>
+				            <div class="dish-title">{{ cellar.title }}<p class="dish-price"></p></div>
+				            <p class="dish-description">{{ cellar.description }}</p>
+				        </div>
+				    </section>
+				{% endfor %}
+			</section>
+		</section>
+		<section class="bg-white mt-10 grid lg:grid-cols-3 lg:grid-row-1 xs:grid-cols-1 row-span-3 gap-3 group text-center lg:pb-5 xs:pb-52">
+			<section>
+				<h1 class="category-title">Menu Saveurs Antique</h1>
+				<p class="text-lg">26.90€</p>
 				<section>
-					<h1 class="category-title">Entrées</h1>
-					<section>
-						<div>
-							<div class="dish-title">Nom de plat un peu long<p class="dish-price">0.00€</p></div>
-							<p class="dish-description">Ceci est une description</p>
-						</div>
-					</section>
+					<div>
+						<div class="dish-title-menu">Entrée au choix</div>
+						<p class="dish-description">Voir carte</p>
+					</div>
 				</section>
 				<section>
-					<h1 class="category-title">Desserts</h1>
-					<section>
-						<div>
-							<div class="dish-title">Nom de plat un peu long<p class="dish-price">0.00€</p></div>
-							<p class="dish-description">Ceci est une description</p>
-						</div>
-					</section>
+					<div>
+						<div class="dish-title-menu">Plat au choix</div>
+						<p class="dish-description">Voir carte</p>
+					</div>
 				</section>
 				<section>
-					<h1 class="category-title">Boissons</h1>
-					<section>
-						<div>
-							<div class="dish-title">Nom de plat un peu long<p class="dish-price">0.00€</p></div>
-							<p class="dish-description">Ceci est une description</p>
-						</div>
-					</section>
-				</section>
-				<section>
-					<h1 class="category-title">Plats</h1>
-					<section>
-						<div>
-							<div class="dish-title">Nom de plat un peu long<p class="dish-price">0.00€</p></div>
-							<p class="dish-description">Ceci est une description</p>
-						</div>
-					</section>
-				</section>
-				<section>
-					<h1 class="category-title">Apéritifs</h1>
-					<section>
-						<div>
-							<div class="dish-title">Nom de plat un peu long<p class="dish-price">0.00€</p></div>
-							<p class="dish-description">Ceci est une description</p>
-						</div>
-					</section>
-				</section>
-				<section>
-					<h1 class="category-title">Notre cave</h1>
-					<section>
-						<div>
-							<div class="dish-title">Nom de plat un peu long<p class="dish-price">0.00€</p></div>
-							<p class="dish-description">Ceci est une description</p>
-						</div>
-					</section>
+					<div>
+						<div class="dish-title-menu">Dessert au choix</div>
+						<p class="dish-description">Voir carte</p>
+					</div>
 				</section>
 			</section>
-			<section class="bg-white mt-10 grid lg:grid-cols-3 lg:grid-row-1 xs:grid-cols-1 row-span-3 gap-3 group text-center lg:pb-5 xs:pb-52">
+			<section>
+				<h1 class="category-title">Menu Enfant</h1>
+				<p class="text-lg">12.90€</p>
 				<section>
-					<h1 class="category-title">Menu Saveurs Antique</h1>
-					<p class="text-lg">26.90€</p>
-					<section>
-						<div>
-							<div class="dish-title-menu">Entrée au choix</div>
-							<p class="dish-description">Voir carte</p>
-						</div>
-					</section>
-					<section>
-						<div>
-							<div class="dish-title-menu">Plat au choix</div>
-							<p class="dish-description">Voir carte</p>
-						</div>
-					</section>
-					<section>
-						<div>
-							<div class="dish-title-menu">Dessert au choix</div>
-							<p class="dish-description">Voir carte</p>
-						</div>
-					</section>
+					<div>
+						<div class="dish-title-menu">Une boisson au choix</div>
+						<p class="dish-description">Voir carte</p>
+					</div>
 				</section>
 				<section>
-					<h1 class="category-title">Menu Enfant</h1>
-					<p class="text-lg">12.90€</p>
-					<section>
-						<div>
-							<div class="dish-title-menu">Une boisson au choix</div>
-							<p class="dish-description">Voir carte</p>
-						</div>
-					</section>
-					<section>
-						<div>
-							<div class="dish-title-menu mb-3">P'tite viande ou Raviolis gratinés</div>
-						</div>
-					</section>
-					<section>
-						<div>
-							<div class="dish-title-menu">Dessert au choix</div>
-							<p class="dish-description">Voir carte</p>
-						</div>
-					</section>
+					<div>
+						<div class="dish-title-menu mb-3">P'tite viande ou Raviolis gratinés</div>
+					</div>
 				</section>
 				<section>
-					<h1 class="category-title">Menu Midi</h1>
-					<p class="text-lg">22.90€</p>
-					<section>
-						<div>
-							<div class="dish-title-menu">Entrée au choix</div>
-							<p class="dish-description">Voir carte</p>
-						</div>
-					</section>
-					<section>
-						<div>
-							<div class="dish-title-menu">Plat au choix</div>
-							<p class="dish-description">Voir carte</p>
-						</div>
-					</section>
-					<section>
-						<div>
-							<div class="dish-title-menu">Dessert au choix</div>
-							<p class="dish-description">Voir carte</p>
-						</div>
-					</section>
+					<div>
+						<div class="dish-title-menu">Dessert au choix</div>
+						<p class="dish-description">Voir carte</p>
+					</div>
 				</section>
 			</section>
-		</main>
-		{% include 'Components/footer.html.twig' %}
-	</body>
-</html>
+			<section>
+				<h1 class="category-title">Menu Midi</h1>
+				<p class="text-lg">22.90€</p>
+				<section>
+					<div>
+						<div class="dish-title-menu">Entrée au choix</div>
+						<p class="dish-description">Voir carte</p>
+					</div>
+				</section>
+				<section>
+					<div>
+						<div class="dish-title-menu">Plat au choix</div>
+						<p class="dish-description">Voir carte</p>
+					</div>
+				</section>
+				<section>
+					<div>
+						<div class="dish-title-menu">Dessert au choix</div>
+						<p class="dish-description">Voir carte</p>
+					</div>
+				</section>
+			</section>
+		</section>
+	</main>
+	{% include 'Components/footer.html.twig' %}
+</body>
