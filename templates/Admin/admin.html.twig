@@ -4,16 +4,18 @@
 	<main class="lg:mt-24 xs:mt-8 lg:ml-32 xs:ml-[6.5rem] grid lg:grid-cols-3 lg:grid-rows-3 xs:grid-cols-1 xs:grid-rows-9 flex-col">
 		<section class="flex-col">
 			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Entrée</h1>
-    		{{ form_start(starter) }}
-    		    {{ form_widget(starter.title) }}
-				{{ form_widget(starter.description) }}
-				{{ form_widget(starter.price) }}
-    		    <section>
-					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
-						Envoyer
-					</button>
-				</section>
-    		{{ form_end(starter) }}
+			{{ form_start(starter)}}
+			    {{ form_widget(starter.title) }}
+			    {{ form_widget(starter.description) }}
+			    {{ form_widget(starter.price) }}
+			    <section>
+			        <button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+			            Envoyer
+			        </button>
+					<a href="{{ path('starter_delete_all') }}" class="delete-all flex-col text-center"><i class="fa-solid fa-trash"> Tout</i></a>
+			    </section>
+			{{ form_end(starter) }}
+			
 		</section>
 		<section class="flex-col">
 			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Apéritif</h1>
@@ -25,6 +27,7 @@
 					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
 						Envoyer
 					</button>
+					<a href="{{ path('aperitif_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(aperitif) }}
 		</section>
@@ -38,6 +41,7 @@
 					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
 						Envoyer
 					</button>
+					<a href="{{ path('dish_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(dish) }}
 		</section>
@@ -50,6 +54,7 @@
 					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
 						Envoyer
 					</button>
+					<a href="{{ path('drink_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(drink) }}
 		</section>
@@ -63,6 +68,7 @@
 					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
 						Envoyer
 					</button>
+					<a href="{{ path('dessert_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(dessert) }}
 		</section>
@@ -75,6 +81,7 @@
 					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
 						Envoyer
 					</button>
+					<a href="{{ path('cellar_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(cellar) }}
 		</section>
