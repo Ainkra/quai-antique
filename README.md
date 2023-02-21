@@ -12,22 +12,22 @@ Quai Antique is a Savoyard restaurant website built with the Symfony web framewo
 # Setting up the project on local
 1. Download .zip repository.
 
-2. (a) Install laragon, composer, and NodeJS.
+2. Install laragon, composer, and NodeJS.
 - https://laragon.org/download/index.html
 - https://getcomposer.org/download/
 - https://nodejs.org/en/download/ and download Longterm support version (LTS)
 
 
-Verify composer installation with `composer -v`.
-Verify NodeJS installation with `node -v`. 
+ Verify composer installation with `composer -v`.
+ Verify NodeJS installation with `node -v`. 
 
-PHP is installed by default by Laragon.
-If you are not in PHP 8.1, follow this guide: https://medium.com/@oluwaseye/add-different-php-versions-to-your-laragon-installation-d2526db5c5f1
+ PHP is installed by default by Laragon.
+ If you are not in PHP 8.1, follow this guide: https://medium.com/@oluwaseye/add-different-php-versions-to-your-laragon-installation-d2526db5c5f1
 
-(b) When laragon is successfully installed, open your folder explorer. Go at this path:
-`C:/laragon/www/`
+ When laragon is successfully installed, open your folder explorer. Go at this path:
+ `C:/laragon/www/`
 
-Drag and drop the .zip file, unzip it inside the folder. After unzip, you can remove .zip.
+ Drag and drop the .zip file, unzip it inside the folder. After unzip, you can remove .zip.
 
 
 3. Run composer install for obtain all the necessary dependencies for Symfony.
