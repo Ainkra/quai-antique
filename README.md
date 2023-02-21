@@ -60,7 +60,7 @@ If the quai_antique is successfully installed on your computer, you can now take
 
 3. Now you need to create your database, in Laragon. Follow this:
 
-![image](https://user-images.githubusercontent.com/58104051/220363403-363765ad-9d53-40a5-83a6-4b0749fe557e.png)
+![image](https://user-images.githubusercontent.com/58104051/220366077-56cc84e8-788d-49a4-9791-8fb8a84a5d6d.png)
 
 
  and follow this
