@@ -49,7 +49,7 @@ Drag and drop the .zip file, unzip it inside the folder. After unzip, you can re
 
 8. Done !
 
-# How add admin user? How create database?
+# How create database?
 If the quai_antique is successfully installed on your computer, you can now take care of the database.
 
 1. In the project, at the root, you must have an .env file. Config it.
@@ -58,7 +58,12 @@ If the quai_antique is successfully installed on your computer, you can now take
 
 2. Restart laragon (click on "Recharger" or "Refresh").
 
-3. Now you need to create your database, in Laragon, make Right click -> MySQL -> HeidiSQL and follow this
+3. Now you need to create your database, in Laragon. Follow this:
+
+![image](https://user-images.githubusercontent.com/58104051/220363403-363765ad-9d53-40a5-83a6-4b0749fe557e.png)
+
+
+ and follow this
 (Copy this SQL request) `CREATE DATABASE IF NOT EXISTS yourDatabase;`
 
 ![image](https://user-images.githubusercontent.com/58104051/220342720-1a742b82-fb0f-436b-ab57-f7c5c541ba68.png)
@@ -67,10 +72,27 @@ If the quai_antique is successfully installed on your computer, you can now take
 Just simply run:
 `php bin/console doctrine:migrations:migrate`
 
-5. Your database and tables are now created and ready to use !
+6. Your database and tables are now created and ready to use !
 
 If you have any problem with the installation, contact me at this email: loisdupasquier21@gmail.com
 
+# How create admin user? 
+
+1. First, create a securised password. I recommend this website for that: https://www.dashlane.com/fr/personal-password-manager/password-generator
+
+2. Copy your password, paste it on a .txt file for example go in VSCODE and type this:
+
+![image](https://user-images.githubusercontent.com/58104051/220362457-04ac5f08-f236-4274-8143-2e8cdedfbc16.png)
+
+If you make a right click, nothing happens, don't panic. Your password is simply hidden.
+Press enter, and you get your hashed password.
+
+3. Now, return in HeidiSQL, and type this:
+(replace the fields with the necessary information, for example 'mon-mail@exemple.com' -> loisdupasquier21@gmail.com)
+`INSERT INTO customer (email, password, guest_number, allergies, roles) VALUES ('mon-mail@exemple.com', 'hashed_password', 'number_of_guest (max 8)', 'mes_allergies', '["ROLE_ADMIN"]');`
+
+4. Your admin account is now created. Log in, then enter this URL to get started:
+`http://quai_antique.local/admin`
 
 # Licensing
 This project is licensed under the MIT License.
