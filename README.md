@@ -89,6 +89,7 @@ Press enter, and you get your hashed password.
 
 3. Now, return in HeidiSQL, and type this:
 (replace the fields with the necessary information, for example 'mon-mail@exemple.com' -> loisdupasquier21@gmail.com)
+
 `INSERT INTO customer (email, password, guest_number, allergies, roles) VALUES ('mon-mail@exemple.com', 'hashed_password', 'number_of_guest (max 8)', 'mes_allergies', '["ROLE_ADMIN"]');`
 
 4. Your admin account is now created. Log in, then enter this URL to get started:
