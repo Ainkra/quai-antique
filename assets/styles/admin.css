@@ -16,6 +16,15 @@
     background-color: #392C1E;
 }
 
+.delete-all {
+    @apply hover:bg-red-400 transition-all ease-in hover:animate-pulse;
+    color: white;
+    font-weight: bold;
+    padding: 0.65rem;
+    background-color: red;
+    border-radius: 7px;
+}
+
 .bg-light-brown {
     background-color: #906427;
 }
