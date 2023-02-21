@@ -17,6 +17,7 @@ Quai Antique is a Savoyard restaurant website built with the Symfony web framewo
 - https://getcomposer.org/download/
 - https://nodejs.org/en/download/ and download Longterm support version (LTS)
 
+
 Verify composer installation with `composer -v`.
 Verify NodeJS installation with `node -v`. 
 
@@ -28,13 +29,16 @@ If you are not in PHP 8.1, follow this guide: https://medium.com/@oluwaseye/add-
 
 Drag and drop the .zip file, unzip it inside the folder. After unzip, you can remove .zip.
 
+
 3. Run composer install for obtain all the necessary dependencies for Symfony.
 
 ![image](https://user-images.githubusercontent.com/58104051/220336025-ba9f2fe8-c734-475d-9095-da80cd56e35d.png)
 
+
 4. Run npm install for obtain all the necessary dependencies for tailwind.
 
 ![image](https://user-images.githubusercontent.com/58104051/220336133-69e0bcca-a09c-4f6b-acef-adc07417a54c.png)
+
 
 5. Run your laragon.
 
