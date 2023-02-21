@@ -8,3 +8,27 @@ controllers:
 logout:
     path: /logout
     methods: GET
+
+starter_delete_all:
+    path: /starter/delete-all
+    controller: App\Controller\CardController::deleteAllStarters
+
+dessert_delete_all:
+    path: /dessert/delete-all
+    controller: App\Controller\CardController::deleteAllDessert
+
+dish_delete_all:
+    path: /dish/delete-all
+    controller: App\Controller\CardController::deleteAllDish
+
+drink_delete_all:
+    path: /drink/delete-all
+    controller: App\Controller\CardController::deleteAllDrink
+
+aperitif_delete_all:
+    path: /aperitif/delete-all
+    controller: App\Controller\CardController::deleteAllAperitif
+
+cellar_delete_all:
+    path: /cellar/delete-all
+    controller: App\Controller\CardController::deleteAllcellar
