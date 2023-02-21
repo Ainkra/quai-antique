@@ -31,6 +31,7 @@ class AdminController extends AbstractController
 //                      ADMIN ROUTING
 //############################################################
 
+    //IsGranted allow access only at user who's have admin role
     #[Route('/admin', name: 'admin')]
     #[IsGranted('ROLE_ADMIN')]
     public function adminLogin(AuthenticationUtils $authenticationUtils, Security $security) : Response
@@ -51,6 +52,7 @@ class AdminController extends AbstractController
         ]);
     }
 
+    // Render bookingManager
     #[Route('/admin/bookingManager', name: 'admin_bookingManager')]
     #[IsGranted('ROLE_ADMIN')]
     public function bookingManager()
@@ -58,6 +60,7 @@ class AdminController extends AbstractController
         return $this->render('Admin/bookingManager.html.twig');
     }
 
+    // Render galeryManager
     #[Route('/admin/galeryManager', name: 'admin_galeryManager')]
     #[IsGranted('ROLE_ADMIN')]
     public function galeryManager()
@@ -65,6 +68,7 @@ class AdminController extends AbstractController
         return $this->render('Admin/galeryManager.html.twig');
     }
 
+    // Render shedulerManager
     #[Route('/admin/shedulerManager', name: 'admin_shedulerManager')]
     #[IsGranted('ROLE_ADMIN')]
     public function shedulerManager()
@@ -107,6 +111,7 @@ class AdminController extends AbstractController
         $dishForm = $this->createForm(DishType::class, $dish);
         $dishForm->handleRequest($request);
 
+        // Send data who's submitted, into database
         if ($dishForm->isSubmitted() && $dishForm->isValid()) {
             $entityManager = $doctrine->getManager();
             $entityManager->persist($dish);
@@ -155,6 +160,7 @@ class AdminController extends AbstractController
             return $this->redirectToRoute('admin');
         }
 
+        // Display different forms
         return $this->render('Admin/admin.html.twig', [
             'dish' => $dishForm->createView(),
             'starter' => $starterForm->createView(),
