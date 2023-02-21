@@ -31,4 +31,4 @@ aperitif_delete_all:
 
 cellar_delete_all:
     path: /cellar/delete-all
-    controller: App\Controller\CardController::deleteAllcellar
+    controller: App\Controller\CardController::deleteAllCellar
