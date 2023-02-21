@@ -10,9 +10,9 @@ Quai Antique is a Savoyard restaurant website built with the Symfony web framewo
 - Encore Webpack
  
 # Setting up the project on local
-1. Download .zip repository.
+- Download .zip repository.
 
-2. Install laragon, composer, and NodeJS.
+- Install laragon, composer, and NodeJS.
 - https://laragon.org/download/index.html
 - https://getcomposer.org/download/
 - https://nodejs.org/en/download/ and download Longterm support version (LTS)
