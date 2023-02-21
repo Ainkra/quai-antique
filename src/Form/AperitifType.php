@@ -13,21 +13,21 @@ class AperitifType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', TextType::class, [
+            ->add('title', TextType::class, [ // Text input type
                 'attr' => [
                     'class' => 'card-input',
                     'placeholder' => 'titre'
                 ],
                 "required" => true
             ])
-            ->add('description', TextType::class, [
+            ->add('description', TextType::class, [ // Text input type
                 'attr' => [
                     'class' => 'card-input',
                     'placeholder' => 'description'
                 ],
                 "required" => true
             ])
-            ->add('price', TextType::class, [
+            ->add('price', TextType::class, [ // Text input type
                 'attr' => [
                     'class' => 'card-input',
                     'placeholder' => 'price'

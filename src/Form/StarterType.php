@@ -7,11 +7,15 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class StarterType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $urlGenerator = $options['url_generator'];
+        
         $builder
             ->add('title', TextType::class, [
                 'attr' => [
@@ -41,6 +45,7 @@ class StarterType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Starter::class,
+            'url_generator' => UrlGeneratorInterface::class, // ajouter cette option
         ]);
     }
 }
