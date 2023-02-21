@@ -12,11 +12,15 @@ Quai Antique is a Savoyard restaurant website built with the Symfony web framewo
 # Setting up the project on local
 1. Download .zip repository.
 
-2. (a) Install laragon, and NodeJS (if necessary).
+2. (a) Install laragon, composer, and NodeJS.
 - https://laragon.org/download/index.html
+- https://getcomposer.org/download/
 - https://nodejs.org/en/download/ and download Longterm support version (LTS)
 
-Verify NodeJS installation with `node -v`. PHP is installed by default by Laragon.
+Verify composer installation with `composer -v`.
+Verify NodeJS installation with `node -v`. 
+
+PHP is installed by default by Laragon.
 If you are not in PHP 8.1, follow this guide: https://medium.com/@oluwaseye/add-different-php-versions-to-your-laragon-installation-d2526db5c5f1
 
 (b) When laragon is successfully installed, open your folder explorer. Go at this path:
@@ -45,11 +49,28 @@ Drag and drop the .zip file, unzip it inside the folder. After unzip, you can re
 
 8. Done !
 
-If you have any trouble at setup, follow this guide (TailwindCSS & Symfony):
-- https://tailwindcss.com/docs/guides/symfony
+# How add admin user? How create database?
+If the quai_antique is successfully installed on your computer, you can now take care of the database.
 
-# Contribution
-If you want to contribute to the project, contact me at: loisdupasquier21@gmail.com .
+1. In the project, at the root, you must have an .env file. Config it.
+
+![image](https://user-images.githubusercontent.com/58104051/220340407-dafa49db-8061-410f-aacd-20c843543ba0.png)
+
+2. Restart laragon (click on "Recharger" or "Refresh").
+
+3. Now you need to create your database, in Laragon, make Right click -> MySQL -> HeidiSQL and follow this
+(Copy this SQL request) `CREATE DATABASE IF NOT EXISTS yourDatabase;`
+
+![image](https://user-images.githubusercontent.com/58104051/220342720-1a742b82-fb0f-436b-ab57-f7c5c541ba68.png)
+
+4. Your database is now created. Normally, in migration, you have the latest version of my database.
+Just simply run:
+`php bin/console doctrine:migrations:migrate`
+
+5. Your database and tables are now created and ready to use !
+
+If you have any problem with the installation, contact me at this email: loisdupasquier21@gmail.com
+
 
 # Licensing
 This project is licensed under the MIT License.
@@ -60,9 +81,6 @@ I will not be held responsible for any undesirable use of my code (cheating, hac
 
 2. Do not use this code for malicious purposes.
 
-3. Any non-constructive opinion on my project will be automatically ignored. 
-We are developers, a community, I seek like you to evolve, not to be attacked.
-Like "Your code is crap!" ➜ 🗑️
-Give me a advice, let's not waste our time.
+3. Give me a advice, let's not waste our time.
 
 
