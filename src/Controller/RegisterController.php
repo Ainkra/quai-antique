@@ -28,7 +28,7 @@ class RegisterController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $email = $form->get('email')->getData(); // Get email data
-            $formData = $form->getData(); // get
+            $formData = $form->getData(); // get form data 
             $entityManager = $doctrine->getManager();
             $existingUser = $entityManager->getRepository(Customer::class)->findBy(['email' => $email]);
             $password = $form->get('password')->getData();
@@ -37,12 +37,12 @@ class RegisterController extends AbstractController
             // If password is not equal at password confirmation
             if ($password !== $confirmPassword) {
                 $message = 'Les mots de passe ne sont pas identiques.';
-                $messageType = 'error';
+                $messageType = 'error'; // Used in template for modify css class
     
                 return $this->render('Register/register.html.twig', [
                     'register' => $form->createView(),
                     'message' => $message,
-                    'messageType' => $messageType
+                    'messageType' => $messageType 
                 ]);
             }
     
@@ -64,7 +64,7 @@ class RegisterController extends AbstractController
                 $formData['password']
             );
             
-            // Send data at 
+            // Send data at database
             $user->setPassword($hashedPassword);
             $user->setEmail($formData['email']);
             $user->setGuestNumber($formData['guestNumber']);
@@ -109,6 +109,7 @@ class RegisterController extends AbstractController
 
             return $response;
         }
+        
         return $this->render('Register/register.html.twig', [
             'register' => $form->createView()
         ]);
