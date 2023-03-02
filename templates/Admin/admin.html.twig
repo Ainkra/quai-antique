@@ -88,7 +88,18 @@
 	<footer>
 		<section>
 			<h1 class="category-title">Entrées</h1>
-			{{ dump(listEntities) }}
+			{% if starters|length > 0 %}
+				{% for starter in starters %}
+					<div class="item">
+					<h2 class="title">{{ starter.title }}</h2>
+					<p class="description">{{ starter.description }}</p>
+					<p class="price">{{ starter.price }}</p>
+					</div>
+				{% endfor %}
+			{% else %}
+				No starters found.
+			{% endif %}
+			{# {{ dump(listEntities) }} #}
 			{# {% for starterEntity in listEntities %}
 				<div class="item">
 					<h2 class="title">{{ starterEntity.title }}</h2>

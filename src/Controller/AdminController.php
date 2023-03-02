@@ -7,6 +7,7 @@ use App\Entity\Desserts;
 use App\Entity\Drink;
 use App\Entity\Cellar;
 use App\Entity\Starter;
+use App\Repository\StarterRepository;
 use App\Entity\Aperitif;
 use App\Form\DishType;
 use App\Form\StarterType;
@@ -177,16 +178,16 @@ class AdminController extends AbstractController
         return $repository->findAll();
     }
 
-    #[Route('/admin/showStarters', name: 'showStarters')]
-    public function showStarters(ManagerRegistry $doctrine): Response
+    #[Route('/starters', name: 'app_starters', methods: ['GET'])]
+    public function showStarters(StarterRepository $starterRepository): Response
     {
         // get entities
-        $starter = $this->getEntities(Starter::class, $doctrine);
+        $starters = $starterRepository->findAll();
 
-        //dd($starter);
+        //dd($starters);
 
         return $this->render('Admin/admin.html.twig', [
-            "listEntities" => $starter,
+            "starters" => $starters,
         ]);
     }
 }
