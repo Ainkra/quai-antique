@@ -20,7 +20,7 @@
     @apply hover:bg-red-400 transition-all ease-in hover:animate-pulse;
     color: white;
     font-weight: bold;
-    padding: 0.65rem;
+    padding: 0.4rem;
     background-color: red;
     border-radius: 7px;
 }
