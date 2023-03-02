@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class ConnectionController extends AbstractController
-{
+{ 
     #[Route('/connection', name: 'app_connection')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
@@ -23,7 +23,7 @@ class ConnectionController extends AbstractController
         return $this->render('Connection/connection.html.twig', [
             'customer' => $customer,
             'last_username' => $lastUsername,
-            'error' => $error,
+            'error' => $error
         ]);
     }
 }

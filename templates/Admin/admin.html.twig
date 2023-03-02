@@ -1,15 +1,14 @@
 {% include 'Components/adminhead.html.twig' %}
 {% include 'Components/adminheader.html.twig' %}
-{% block body %}
 	<main class="lg:mt-24 xs:mt-8 lg:ml-32 xs:ml-[6.5rem] grid lg:grid-cols-3 lg:grid-rows-3 xs:grid-cols-1 xs:grid-rows-9 flex-col">
 		<section class="flex-col">
 			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Entrée</h1>
-			{{ form_start(starter)}}
+			{{ form_start(starter) }}
 			    {{ form_widget(starter.title) }}
 			    {{ form_widget(starter.description) }}
 			    {{ form_widget(starter.price) }}
 			    <section>
-			        <button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+			        <button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 			            Envoyer
 			        </button>
 					<a href="{{ path('starter_delete_all') }}" class="delete-all flex-col text-center"><i class="fa-solid fa-trash"> Tout</i></a>
@@ -24,7 +23,7 @@
 				{{ form_widget(aperitif.description) }}
 				{{ form_widget(aperitif.price) }}
     		    <section>
-					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
 					<a href="{{ path('aperitif_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
@@ -38,7 +37,7 @@
 				{{ form_widget(dish.description) }}
 				{{ form_widget(dish.price) }}
     		    <section>
-					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
 					<a href="{{ path('dish_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
@@ -51,7 +50,7 @@
     		    {{ form_widget(drink.title) }}
 				{{ form_widget(drink.price) }}
     		    <section>
-					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
 					<a href="{{ path('drink_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
@@ -65,7 +64,7 @@
 				{{ form_widget(dessert.description) }}
 				{{ form_widget(dessert.price) }}
     		    <section>
-					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
 					<a href="{{ path('dessert_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
@@ -78,7 +77,7 @@
     		    {{ form_widget(cellar.title) }}
 				{{ form_widget(cellar.description) }}
     		    <section>
-					<button type="submit" method="post" class="w-32 rounded-md bg-green-700 hover:bg-green-500 text-white p-2 transition-all ease-in font-bold">
+					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
 					<a href="{{ path('cellar_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
@@ -86,4 +85,16 @@
     		{{ form_end(cellar) }}
 		</section>
 	</main>
-{% endblock %}
+	<footer>
+		<section>
+			<h1 class="category-title">Entrées</h1>
+			{{ dump(listEntities) }}
+			{# {% for starterEntity in listEntities %}
+				<div class="item">
+					<h2 class="title">{{ starterEntity.title }}</h2>
+					<p class="description">{{ starterEntity.description }}</p>
+					<p class="price">{{ starterEntity.price }}</p>
+				</div>
+			{% endfor %} #}
+		</section>
+	</footer>

@@ -93,6 +93,9 @@ class AdminController extends AbstractController
         $drink = new Drink();
         
         // Form creation
+        $starterForm = $this->createForm(StarterType::class, $starter);
+        $starterForm->handleRequest($request);
+
         $drinkForm = $this->createForm(DrinkType::class, $drink);
         $drinkForm->handleRequest($request);
 
@@ -104,9 +107,6 @@ class AdminController extends AbstractController
 
         $dessertForm = $this->createForm(DessertType::class, $dessert);
         $dessertForm->handleRequest($request);
-
-        $starterForm = $this->createForm(StarterType::class, $starter);
-        $starterForm->handleRequest($request);
 
         $dishForm = $this->createForm(DishType::class, $dish);
         $dishForm->handleRequest($request);
@@ -170,4 +170,50 @@ class AdminController extends AbstractController
             'drink' => $drinkForm->createView()
         ]);
     }
+
+    public function getEntities(string $entityClass, ManagerRegistry $doctrine): array
+    {
+        $repository = $doctrine->getManager()->getRepository($entityClass);
+        return $repository->findAll();
+    }
+
+    #[Route('/admin/showStarters', name: 'showStarters')]
+    public function showStarters(ManagerRegistry $doctrine): Response
+    {
+        // get entities
+        $starter = $this->getEntities(Starter::class, $doctrine);
+
+        //dd($starter);
+
+        return $this->render('Admin/admin.html.twig', [
+            "listEntities" => $starter,
+        ]);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // $aperitif = $this->getEntities(Aperitif::class, $doctrine);
+        // $cellar = $this->getEntities(Cellar::class, $doctrine);
+        // $desserts = $this->getEntities(Desserts::class, $doctrine);
+        // $dish = $this->getEntities(Dish::class, $doctrine);
+        // $drink = $this->getEntities(Drink::class, $doctrine);
+
+
+            // 'aperitif' => $aperitif,
+            // 'cellar' => $cellar,
+            // 'desserts' => $desserts,
+            // 'dish' => $dish,
+            // 'drink' => $drink
