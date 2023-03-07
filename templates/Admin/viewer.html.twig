@@ -3,13 +3,17 @@
 {% block body %}
     <section class="mt-10 grid lg:grid-cols-3 lg:grid-row-2 xs:grid-cols-1 row-span-3 gap-3 group text-center text-white">
         <section>
-            <h1 class="category-title">Entrées</h1>
+            <h1 class="category-admin-title">Entrées</h1>
             {% if starters is defined %}
                 {% for starter in starters %}
 				    <section>
 				        <div>
-				            <div class="dish-title"><b>({{ starter.id }})</b> {{ starter.title }}<p class="dish-price">{{ starter.price }} €</p>
-                            <p class="dish-description">{{ starter.description }}</p></div>
+				            <div class="dish-admin-title">
+                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                <b>({{ starter.id }})</b> {{ starter.title }}
+                                <p class="dish-price">{{ starter.price }} €</p>
+                                <p class="dish-description">{{ starter.description }}</p>
+                            </div>
 				        </div>
 				    </section>
                 {% endfor %}
@@ -18,13 +22,17 @@
             {% endif %}
         </section>
         <section>
-            <h1 class="category-title">Desserts</h1>
+            <h1 class="category-admin-title">Desserts</h1>
             {% if desserts is defined %}
                 {% for dessert in desserts %}
 				    <section>
 				        <div>
-				            <div class="dish-title"><b>({{ dessert.id }})</b> {{ dessert.title }}<p class="dish-price">{{ dessert.price }} €</p>
-                            <p class="dish-description">{{ dessert.description }}</p></div>
+				            <div class="dish-admin-title">
+                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                <b>({{ dessert.id }})</b> {{ dessert.title }}
+                                <p class="dish-price">{{ dessert.price }} €</p>
+                                <p class="dish-description">{{ dessert.description }}</p>
+                            </div>
 				        </div>
 				    </section>
                 {% endfor %}
@@ -33,12 +41,16 @@
             {% endif %}
         </section>
         <section>
-            <h1 class="category-title">Boissons</h1>
+            <h1 class="category-admin-title">Boissons</h1>
             {% if drinks is defined %}
                 {% for drink in drinks %}
 				    <section>
 				        <div>
-				            <div class="dish-title"><b>({{ drink.id }})</b> {{ drink.title }}<p class="dish-price">{{ drink.price }} €</p>
+				            <div class="dish-admin-title">
+                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                <b>({{ drink.id }})</b> {{ drink.title }}
+                                <p class="dish-price">{{ drink.price }} €</p>
+                            </div>
 				        </div>
 				    </section>
                 {% endfor %}
@@ -47,13 +59,17 @@
             {% endif %}
         </section>
         <section>
-            <h1 class="category-title">Plats</h1>
+            <h1 class="category-admin-title">Plats</h1>
             {% if dishes is defined %}
                 {% for dish in dishes %}
 				    <section>
 				        <div>
-				            <div class="dish-title"><b>({{ dish.id }})</b>  {{ dish.title }}<p class="dish-price">{{ dish.price }} €</p>
-                            <p class="dish-description">{{ dish.description }}</p></div>
+				            <div class="dish-admin-title">
+                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                <b>({{ dish.id }})</b> {{ dish.title }}
+                                <p class="dish-price">{{ dish.price }} €</p>
+                                <p class="dish-description">{{ dish.description }}</p>
+                            </div>
 				        </div>
 				    </section>
                 {% endfor %}
@@ -62,13 +78,17 @@
             {% endif %}
         </section>
         <section>
-            <h1 class="category-title">Apéritifs</h1>
+            <h1 class="category-admin-title">Apéritifs</h1>
             {% if aperitifs is defined %}
                 {% for aperitif in aperitifs %}
 				    <section>
 				        <div>
-				            <div class="dish-title"><b>({{ aperitif.id }})</b> {{ aperitif.title }}<p class="dish-price">{{ aperitif.price }} €</p>
-                            <p class="dish-description">{{ aperitif.description }}</p></div>
+				            <div class="dish-admin-title">
+                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                <b>({{ aperitif.id }})</b> {{ aperitif.title }}
+                                <p class="dish-price">{{ aperitif.price }} €</p>
+                                <p class="dish-description">{{ aperitif.description }}</p>
+                            </div>
 				        </div>
 				    </section>
                 {% endfor %}
@@ -77,12 +97,16 @@
             {% endif %}
         </section>
         <section>
-            <h1 class="category-title">Cave</h1>
+            <h1 class="category-admin-title">Cave</h1>
             {% if cellars is defined %}
                 {% for cellar in cellars %}
 				    <section>
 				        <div>
-				            <div class="dish-title"><b>({{ cellar.id }})</b> {{ cellar.title }}</div>
+				            <div class="dish-admin-title">
+                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                <b>({{ cellar.id }})</b> {{ cellar.title }}
+                                <p class="dish-description">{{ cellar.description }}</p>
+                            </div>
 				        </div>
 				    </section>
                 {% endfor %}
