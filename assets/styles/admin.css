@@ -72,3 +72,12 @@
 .card-input {
     @apply mb-2 text-black lg:text-2xl xs:text-lg;
 }
+
+.admin-delete-button {
+    @apply text-red-600 hover:text-red-500 transition-all ease-in hover:animate-pulse;
+}
+
+.category-admin-title {
+    @apply text-2xl font-bold;
+    color: #3f2f20;
+}
