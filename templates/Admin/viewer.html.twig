@@ -9,10 +9,13 @@
 				    <section>
 				        <div>
 				            <div class="dish-admin-title">
-                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
-                                <b>({{ starter.id }})</b> {{ starter.title }}
-                                <p class="dish-price">{{ starter.price }} €</p>
-                                <p class="dish-description">{{ starter.description }}</p>
+                                <form action="{{ path('admin_viewer_delete', { 'type': 'starter', 'id': starter.id }) }}" method="POST">
+                                    <button class="admin-delete-button"  type="submit" ><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                
+                                    <b>({{ starter.id }})</b> {{ starter.title }}
+                                    <p class="dish-price">{{ starter.price }} €</p>
+                                    <p class="dish-description">{{ starter.description }}</p>
+                                </form>
                             </div>
 				        </div>
 				    </section>
@@ -28,10 +31,13 @@
 				    <section>
 				        <div>
 				            <div class="dish-admin-title">
-                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
-                                <b>({{ dessert.id }})</b> {{ dessert.title }}
-                                <p class="dish-price">{{ dessert.price }} €</p>
-                                <p class="dish-description">{{ dessert.description }}</p>
+                                <form action="{{ path('admin_viewer_delete', { 'type': 'desserts', 'id': dessert.id }) }}" method="POST">
+                                    <button class="admin-delete-button"  type="submit" ><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                
+                                    <b>({{ dessert.id }})</b> {{ dessert.title }}
+                                    <p class="dish-price">{{ dessert.price }} €</p>
+                                    <p class="dish-description">{{ dessert.description }}</p>
+                                </form>
                             </div>
 				        </div>
 				    </section>
@@ -47,9 +53,12 @@
 				    <section>
 				        <div>
 				            <div class="dish-admin-title">
-                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
-                                <b>({{ drink.id }})</b> {{ drink.title }}
-                                <p class="dish-price">{{ drink.price }} €</p>
+                                <form action="{{ path('admin_viewer_delete', { 'type': 'drink', 'id': drink.id }) }}" method="POST">
+                                    <button class="admin-delete-button"  type="submit" ><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                
+                                    <b>({{ drink.id }})</b> {{ drink.title }}
+                                    <p class="dish-price">{{ drink.price }} €</p>
+                                </form>
                             </div>
 				        </div>
 				    </section>
@@ -65,10 +74,13 @@
 				    <section>
 				        <div>
 				            <div class="dish-admin-title">
-                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
-                                <b>({{ dish.id }})</b> {{ dish.title }}
-                                <p class="dish-price">{{ dish.price }} €</p>
-                                <p class="dish-description">{{ dish.description }}</p>
+                                <form action="{{ path('admin_viewer_delete', { 'type': 'dish', 'id': dish.id }) }}" method="POST">
+                                    <button class="admin-delete-button"  type="submit" ><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                
+                                    <b>({{ dish.id }})</b> {{ dish.title }}
+                                    <p class="dish-price">{{ dish.price }} €</p>
+                                    <p class="dish-description">{{ dish.description }}</p>
+                                </form>
                             </div>
 				        </div>
 				    </section>
@@ -84,10 +96,13 @@
 				    <section>
 				        <div>
 				            <div class="dish-admin-title">
-                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
-                                <b>({{ aperitif.id }})</b> {{ aperitif.title }}
-                                <p class="dish-price">{{ aperitif.price }} €</p>
-                                <p class="dish-description">{{ aperitif.description }}</p>
+                                <form action="{{ path('admin_viewer_delete', { 'type': 'aperitif', 'id': aperitif.id }) }}" method="POST">
+                                    <button class="admin-delete-button"  type="submit" ><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                
+                                    <b>({{ aperitif.id }})</b> {{ aperitif.title }}
+                                    <p class="dish-price">{{ aperitif.price }} €</p>
+                                    <p class="dish-description">{{ aperitif.description }}</p>
+                                </form>
                             </div>
 				        </div>
 				    </section>
@@ -103,9 +118,12 @@
 				    <section>
 				        <div>
 				            <div class="dish-admin-title">
-                                <button class="admin-delete-button"><i class="fa-solid fa-square-xmark fa-xl"></i></button>
-                                <b>({{ cellar.id }})</b> {{ cellar.title }}
-                                <p class="dish-description">{{ cellar.description }}</p>
+                                <form action="{{ path('admin_viewer_delete', { 'type': 'cellar', 'id': cellar.id }) }}" method="POST">
+                                    <button class="admin-delete-button" type="submit" ><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                
+                                    <b>({{ cellar.id }})</b> {{ cellar.title }}
+                                    <p class="dish-description">{{ cellar.description }}</p>
+                                </form>
                             </div>
 				        </div>
 				    </section>
