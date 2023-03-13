@@ -2,12 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Aperitif;
-use App\Entity\Cellar;
-use App\Entity\Desserts;
-use App\Entity\Drink;
-use App\Entity\Starter;
-use App\Entity\Dish;
 use App\Repository\StarterRepository;
 use App\Repository\AperitifRepository;
 use App\Repository\DessertsRepository;
@@ -19,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DishViewerController extends AbstractController
+class DishDeleterController extends AbstractController
 {
 
     #[Route('admin/viewer', name: 'admin_viewer')]
@@ -41,7 +35,7 @@ class DishViewerController extends AbstractController
         $aperitifs = $aperitifRepository->findAll();
 
         // Display entities
-        return $this->render('Admin/viewer.html.twig', [
+        return $this->render('Admin/dishDeleter.html.twig', [
             "starters" => $starters,
             "desserts" => $desserts,
             "dishes" => $dishes,
@@ -52,11 +46,7 @@ class DishViewerController extends AbstractController
     }
 
     #[Route('admin/viewer/delete/{type}/{id}', name: 'admin_viewer_delete')]
-    public function deleteItem(
-        string $type,
-        int $id,
-        ManagerRegistry $doctrine
-    ): Response
+    public function deleteItem(string $type, int $id, ManagerRegistry $doctrine): Response
     {
         // Determine which entity class to use based on $type
         $entityClass = 'App\\Entity\\' . ucfirst($type);
@@ -77,36 +67,6 @@ class DishViewerController extends AbstractController
         // Redirect the user back to the viewer page
         return $this->redirectToRoute('admin_viewer');
     }
-
-    // #[Route('admin/viewer/delete/starter/{id}', name: 'admin_viewer_delete_starter')]
-    // public function deleteStarter(
-    //     Starter $starter,
-    //     ManagerRegistry $doctrine
-    // ): Response
-    // {
-    //     // Delete the dish from the database
-    //     $entityManager = $doctrine->getManager();
-    //     $entityManager->remove($starter);
-    //     $entityManager->flush();
-
-    //     // Redirect the user back to the viewer page
-    //     return $this->redirectToRoute('admin_viewer');
-    // }
-
-    // #[Route('admin/viewer/delete/desserts/{id}', name: 'admin_viewer_delete_desserts')]
-    // public function deleteDessert(
-    //     Desserts $desserts,
-    //     ManagerRegistry $doctrine
-    // ): Response
-    // {
-    //     // Delete the dish from the database
-    //     $entityManager = $doctrine->getManager();
-    //     $entityManager->remove($desserts);
-    //     $entityManager->flush();
-
-    //     // Redirect the user back to the viewer page
-    //     return $this->redirectToRoute('admin_viewer');
-    // }
 }
 
 

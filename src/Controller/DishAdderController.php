@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-class CardModifierController extends AbstractController
+class DishAdderController extends AbstractController
 {
     
     //############################################################
@@ -109,7 +109,7 @@ class CardModifierController extends AbstractController
         }
 
         // Display different forms
-        return $this->render('Admin/cardModifier.html.twig', [
+        return $this->render('Admin/dishAdder.html.twig', [
             'dish' => $dishForm->createView(),
             'starter' => $starterForm->createView(),
             'dessert' => $dessertForm->createView(),
