@@ -1,0 +1,21 @@
+{% include 'Components/adminhead.html.twig' %}
+{% include 'Components/adminheader.html.twig' %}
+
+{% block body %}
+	<main class="lg:mt-24 xs:mt-8 lg:ml-32 xs:ml-[6.5rem] grid lg:grid-cols-3 lg:grid-rows-3 xs:grid-cols-1 xs:grid-rows-9 flex-col">
+		<section class="flex-col">
+			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Entrée</h1>
+            <h1 class="text-white">Données actuelles {{ starters.title }}</h1>
+			{{ form_start(form) }}
+			    {{ form_widget(form.title) }}
+			    {{ form_widget(form.description) }}
+			    {{ form_widget(form.price) }}
+			    <section>
+			        <button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
+			            Envoyer
+			        </button>
+			    </section>
+			{{ form_end(form) }}
+		</section>
+	</main>
+{% endblock %}
