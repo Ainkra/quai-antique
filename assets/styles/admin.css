@@ -81,3 +81,14 @@
     @apply text-2xl font-bold;
     color: #3f2f20;
 }
+
+.admin-dish-button {
+    @apply hover:bg-green-500 transition-all ease-in m-2;
+    padding: 0.4rem;
+    border-radius: 7px;
+    background-color: #83c09a;
+}
+
+.admin-modify-button {
+    @apply w-32 rounded-md hover:bg-green-500 text-white transition-all ease-in font-bold p-1 my-1;
+}
