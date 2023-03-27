@@ -10,7 +10,7 @@
 				        <div>
 				            <div class="dish-admin-title">
                                 <form action="{{ path('admin_viewer_delete', { 'type': 'starter', 'id': starter.id }) }}" method="POST">
-                                    <button class="admin-delete-button"  type="submit" ><i class="fa-solid fa-square-xmark fa-xl"></i></button>
+                                    <button class="admin-delete-button" type="submit" ><i class="fa-solid fa-square-xmark fa-xl"></i></button>
                                 
                                     <b>({{ starter.id }})</b> {{ starter.title }}
                                     <p class="dish-price">{{ starter.price }} €</p>
