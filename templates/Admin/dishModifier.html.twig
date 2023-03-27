@@ -2,20 +2,49 @@
 {% include 'Components/adminheader.html.twig' %}
 
 {% block body %}
-	<main class="lg:mt-24 xs:mt-8 lg:ml-32 xs:ml-[6.5rem] grid lg:grid-cols-3 lg:grid-rows-3 xs:grid-cols-1 xs:grid-rows-9 flex-col">
-		<section class="flex-col">
-			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Entrée</h1>
-            <h1 class="text-white">Données actuelles {{ starters.title }}</h1>
-			{{ form_start(form) }}
-			    {{ form_widget(form.title) }}
-			    {{ form_widget(form.description) }}
-			    {{ form_widget(form.price) }}
-			    <section>
-			        <button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
-			            Envoyer
-			        </button>
-			    </section>
-			{{ form_end(form) }}
-		</section>
-	</main>
+    <p class="text-3xl text-white text-center font-bold mt-10">Modifier un plat</p>
+    <main class="lg:mt-24 xs:mt-8 lg:ml-32 xs:ml-[6.5rem] grid lg:grid-cols-3 lg:grid-rows-3 xs:grid-cols-1 xs:grid-rows-9 flex-col">
+        <section class="flex-col text-white">
+            <h1 class="block text-white font-bold mb-1 text-2xl mt-1" for="plat">Entrée</h1>
+            {% for starter in starters %}
+                <p class="my-1">({{ starter.id }}) {{ starter.title }} {{ starter.description }} {{ starter.price }} <a href="{{ path('admin_dishModifier_edit', {type: 'starter', id: starter.id}) }}" class="admin-modify-button text-center"><i class="fa-solid fa-pen-to-square"></i></a></p>
+				<br>
+            {% endfor %}
+        </section>
+        <section class="flex-col text-white">
+            <h1 class="block text-white font-bold mb-1 text-2xl mt-1" for="plat">Aperitif</h1>
+            {% for aperitif in aperitifs %}
+                <p class="">({{ aperitif.id }}) {{ aperitif.title }} {{ aperitif.description }} {{ aperitif.price }} <a href="{{ path('admin_dishModifier_edit', {type: 'aperitif', id: aperitif.id}) }}" class="admin-modify-button"><i class="fa-solid fa-pen-to-square"></i></a></p>
+				<br>
+            {% endfor %}
+        </section>
+        <section class="flex-col text-white">
+            <h1 class="block text-white font-bold mb-1 text-2xl mt-1" for="plat">Plats</h1>
+            {% for dish in dishes %}
+                <p class="my-2">({{ dish.id }}) {{ dish.title }} {{ dish.description }} {{ dish.price }} <a href="{{ path('admin_dishModifier_edit', {type: 'dish', id: dish.id}) }}" class="admin-modify-button"><i class="fa-solid fa-pen-to-square"></i></a></p>
+				<br>
+            {% endfor %}
+        </section>
+        <section class="flex-col text-white">
+            <h1 class="block text-white font-bold mb-1 text-2xl mt-1" for="plat">Boissons</h1>
+            {% for drink in drinks %}
+                <p>({{ drink.id }}) {{ drink.title }} {{ drink.price }} <a href="{{ path('admin_dishModifier_edit', {type: 'drink', id: drink.id}) }}" class="admin-modify-button"><i class="fa-solid fa-pen-to-square"></i></a></p>
+				<br>
+            {% endfor %}
+        </section>
+        <section class="flex-col text-white">
+            <h1 class="block text-white font-bold mb-1 text-2xl mt-1" for="plat">Desserts</h1>
+            {% for dessert in desserts %}
+                <p>({{ dessert.id }}) {{ dessert.title }} {{ dessert.description }} {{ dessert.price }} <a href="{{ path('admin_dishModifier_edit', {type: 'desserts', id: dessert.id}) }}" class="admin-modify-button"><i class="fa-solid fa-pen-to-square"></i></a></p>
+				<br>
+            {% endfor %}
+        </section>
+        <section class="flex-col text-white">
+            <h1 class="block text-white font-bold mb-1 text-2xl mt-1" for="plat">Cave</h1>
+            {% for cellar in cellars %}
+                <p>({{ cellar.id }}) {{ cellar.title }} {{ cellar.description }} <a href="{{ path('admin_dishModifier_edit', {type: 'cellar', id: cellar.id}) }}" class="admin-modify-button"><i class="fa-solid fa-pen-to-square"></i></a></p>
+				<br>
+            {% endfor %}
+        </section>
+    </main>
 {% endblock %}
