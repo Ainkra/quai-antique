@@ -4,7 +4,7 @@
 {% block body %}
 	<main class="lg:mt-24 xs:mt-8 lg:ml-32 xs:ml-[6.5rem] grid lg:grid-cols-3 lg:grid-rows-3 xs:grid-cols-1 xs:grid-rows-9 flex-col">
 		<section class="flex-col">
-			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Entrée</h1>
+			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Ajouter une entrée</h1>
 			{{ form_start(starter) }}
 			    {{ form_widget(starter.title) }}
 			    {{ form_widget(starter.description) }}
@@ -13,13 +13,12 @@
 			        <button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 			            Envoyer
 			        </button>
-					<a href="{{ path('starter_delete_all') }}" class="delete-all flex-col text-center"><i class="fa-solid fa-trash"> Tout</i></a>
 			    </section>
 			{{ form_end(starter) }}
 			
 		</section>
 		<section class="flex-col">
-			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Apéritif</h1>
+			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Ajouter un apéritif</h1>
     		{{ form_start(aperitif) }}
     		    {{ form_widget(aperitif.title) }}
 				{{ form_widget(aperitif.description) }}
@@ -28,12 +27,11 @@
 					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
-					<a href="{{ path('aperitif_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(aperitif) }}
 		</section>
 		<section class="flex-col">
-			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Plat</h1>
+			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Ajouter un plat</h1>
     		{{ form_start(dish) }}
     		    {{ form_widget(dish.title) }}
 				{{ form_widget(dish.description) }}
@@ -42,12 +40,11 @@
 					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
-					<a href="{{ path('dish_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(dish) }}
 		</section>
 		<section class="flex-col">
-			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Boissons</h1>
+			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Ajouter une boisson</h1>
     		{{ form_start(drink) }}
     		    {{ form_widget(drink.title) }}
 				{{ form_widget(drink.price) }}
@@ -55,12 +52,11 @@
 					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
-					<a href="{{ path('drink_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(drink) }}
 		</section>
 			<section class="flex-col">
-			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Dessert</h1>
+			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Ajouter un dessert</h1>
     		{{ form_start(dessert) }}
     		    {{ form_widget(dessert.title) }}
 				{{ form_widget(dessert.description) }}
@@ -69,12 +65,11 @@
 					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
-					<a href="{{ path('dessert_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(dessert) }}
 		</section>
 			<section class="flex-col">
-			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Cave</h1>
+			<h1 class="block text-white font-bold mb-2 text-2xl" for="plat">Ajouter un spiritueux (cave)</h1>
     		{{ form_start(cellar) }}
     		    {{ form_widget(cellar.title) }}
 				{{ form_widget(cellar.description) }}
@@ -82,12 +77,12 @@
 					<button type="submit" method="post" class="w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold">
 						Envoyer
 					</button>
-					<a href="{{ path('cellar_delete_all') }}" class="delete-all"><i class="fa-solid fa-trash"> Tout</i></a>
 				</section>
     		{{ form_end(cellar) }}
 		</section>
 	</main>
-	<footer class="text-center mt-5">
-		<a href="{{ path('admin_viewer') }}" class="w-24 rounded-md bg-green-700 hover:bg-green-500 text-white p-3 transition-all ease-in font-bold">Voir les articles</a>
+	<footer class="text-center lg:mt-0 lg:mb-0 xs:mt-5 xs:mb-10">
+		<a href="{{ path('admin_viewer') }}" class="w-24 rounded-md bg-red-700 hover:bg-red-500 text-white p-3 transition-all ease-in font-bold">Supprimer des articles</a>
+		<a href="{{ path('admin_dishModifier') }}" class="w-24 rounded-md bg-yellow-500 hover:bg-yellow-400 text-white p-3 transition-all ease-in font-bold">Modifier les articles</a>
 	</footer>
 {% endblock %}
