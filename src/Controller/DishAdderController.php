@@ -19,7 +19,7 @@ use App\Form\CellarType;
 use App\Form\DrinkType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ManagerRegistry;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class DishAdderController extends AbstractController
 {
@@ -29,7 +29,7 @@ class DishAdderController extends AbstractController
     //############################################################
     #[Route('/admin/cardManager', name: 'admin_cardManager')]
     #[IsGranted('ROLE_ADMIN')]
-    public function cardFormManager(Request $request, ManagerRegistry $doctrine): Response
+    public function dishAdder(Request $request, ManagerRegistry $doctrine): Response
     {
         // Declare new Entity
         $starter = new Starter();
