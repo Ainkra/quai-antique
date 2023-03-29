@@ -36,14 +36,6 @@ class AdminController extends AbstractController
             'error' => $error
         ]);
     }
-    
-    // Render bookingManager
-    #[Route('/admin/bookingManager', name: 'admin_bookingManager')]
-    #[IsGranted('ROLE_ADMIN')]
-    public function bookingManager()
-    {
-        return $this->render('Admin/bookingManager.html.twig');
-    }
 
     // Render galeryManager
     #[Route('/admin/galeryManager', name: 'admin_galeryManager')]
