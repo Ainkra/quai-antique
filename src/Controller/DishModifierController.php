@@ -14,6 +14,7 @@ use App\Form\AperitifType;
 use App\Form\CellarType;
 use App\Form\DrinkType;
 use App\Form\DessertType;
+use App\Form\RemainingPlacesType;
 use App\Repository\StarterRepository;
 use App\Repository\AperitifRepository;
 use App\Repository\DishRepository;
@@ -28,11 +29,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DishModifierController extends AbstractController
 {
+    /**
+     * Rendering forms and page.
+     */
     #[Route('admin/dishModifier', name: 'admin_dishModifier')]
     public function dishDisplayer(
-        StarterRepository $starterRepository, 
-        DishRepository $dishRepository, 
-        AperitifRepository $aperitifRepository, 
+        StarterRepository $starterRepository,
+        DishRepository $dishRepository,
+        AperitifRepository $aperitifRepository,
         DrinkRepository $drinkRepository,
         CellarRepository $cellarRepository,
         DessertsRepository $dessertsRepository
@@ -55,14 +59,16 @@ class DishModifierController extends AbstractController
         ]);
     }
 
+    /**
+     * Permit to get the dish and modify it
+     */
     #[Route('admin/dishModifier/{type}/{id}/edit', name: 'admin_dishModifier_edit')]
     public function dishModifier(Request $request, $type, $id, ManagerRegistry $doctrine): Response
     {
         $entityClass = $this->getEntityClass($type);
         $entity = $doctrine->getRepository($entityClass)->find($id);
     
-        $formType = $this->getFormType($type);
-        $form = $this->createForm($formType, $entity);
+        $form = $this->createForm(RemainingPlacesType::class, $entity);
         $form->handleRequest($request);
     
         if ($form->isSubmitted() && $form->isValid()) {
@@ -78,6 +84,10 @@ class DishModifierController extends AbstractController
         ]);
     }
 
+    /**
+     * Permit to get the dish and identify it
+     * @param string $type Dish type
+     */
     private function getEntityClass($type)
     {
         switch ($type) {
@@ -98,6 +108,10 @@ class DishModifierController extends AbstractController
         throw new \InvalidArgumentException("Type de plat non valide");
     }
 
+    /**
+     * Permit to get the form type
+     * @param string $type form type
+     */
     private function getFormType(string $type): string
     {
         switch ($type) {
