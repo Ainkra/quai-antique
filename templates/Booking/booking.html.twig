@@ -3,6 +3,7 @@
 <body class="background min-h-screen">
 {% include 'Components/header.html.twig' %}
     <main class="stylisedPolice bg-dark py-16 lg:mx-16 xs:mx-0 mb-14 lg:mt-10 xs:mt-0">
+		{# <section class=""><p id="remainingReservations"></p></section> #}
         <form method="post" action="{{ path('app_booking') }}" class="">
             {{ form_start(booking) }}
 			
@@ -43,4 +44,24 @@
 			</p>
     </section>
 	{% include 'Components/footer.html.twig' %}
+	<script>
+		{# function updateRemainingReservations() {
+			fetch("{{ path('admin_remaining_reservations') }}")
+				.then(function(response) {
+					if (!response.ok) {
+						throw new Error("Erreur lors de la récupération des réservations restantes : " + response.statusText);
+					}
+					return response.json();
+				})
+				.then(function(data) {
+					document.getElementById("remainingReservations").textContent = "Réservations restantes : " + data.remainingReservations;
+				})
+				.catch(function(error) {
+					console.error("Erreur lors de la récupération des réservations restantes :", error);
+				});
+		}
+
+		// Appeler la fonction updateRemainingReservations à intervalle régulier (par exemple, toutes les 10 secondes)
+		setInterval(updateRemainingReservations, 10000); #}
+	</script>
 </body>
