@@ -3,12 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\Booking;
+use App\Entity\RemainingPlaces;
 use App\Form\BookingType;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class BookingController extends AbstractController
 {
@@ -49,7 +52,6 @@ class BookingController extends AbstractController
                 'message' => $message,
                 'messageType' => $messageType
             ]);
-
         }
 
         return $this->render('Booking/booking.html.twig', [
@@ -57,9 +59,24 @@ class BookingController extends AbstractController
         ]);
     }
 
-    #[Route('/booking/remainingPlaces', name: 'app_booking_remainingPlaces')]
-    public function remainingPlaces() 
+    #[Route('/booking/remainingPlaces', name: 'app_booking_remainingPlaces', methods: ['GET'])]
+    public function remainingPlaces(EntityManagerInterface $doctrine): JsonResponse
     {
-        
+        $remainingPlacesRepository = $doctrine->getRepository(RemainingPlaces::class);
+        $remainingPlaces = $remainingPlacesRepository->createQueryBuilder('p')
+            ->select('p.places') 
+            ->getQuery() 
+            ->getSingleScalarResult();
+
+        $bookingRepository = $doctrine->getRepository(Booking::class); 
+        $bookingNumber = $bookingRepository->createQueryBuilder('e') 
+            ->select('count(e.id)') 
+            ->getQuery() 
+            ->getSingleScalarResult();
+    
+        return new JsonResponse([
+            'bookingNumber' => $bookingNumber,
+            'remainingPlaces' => $remainingPlaces
+        ]);
     }
 }
