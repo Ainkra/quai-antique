@@ -40,7 +40,7 @@ class DishModifierController extends AbstractController
         DrinkRepository $drinkRepository,
         CellarRepository $cellarRepository,
         DessertsRepository $dessertsRepository
-    ): Response
+    ) : Response
     {
         $starters = $starterRepository->findAll();
         $dishes = $dishRepository->findAll();
