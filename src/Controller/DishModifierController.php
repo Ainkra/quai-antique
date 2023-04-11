@@ -67,8 +67,9 @@ class DishModifierController extends AbstractController
     {
         $entityClass = $this->getEntityClass($type);
         $entity = $doctrine->getRepository($entityClass)->find($id);
-    
-        $form = $this->createForm(RemainingPlacesType::class, $entity);
+
+        $formType = $this->getFormType($type);
+        $form = $this->createForm($formType, $entity);
         $form->handleRequest($request);
     
         if ($form->isSubmitted() && $form->isValid()) {
