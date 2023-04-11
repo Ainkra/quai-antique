@@ -7,11 +7,6 @@
     font-family: 'Roboto Slab', serif;
 }
 
-nav {
-    position: sticky;
-    top: 0px;
-}
-
 .bg-brown {
     background-color: #392C1E;
 }

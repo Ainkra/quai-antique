@@ -35,27 +35,12 @@ class DishModifierController extends AbstractController
     #[Route('admin/dishModifier', name: 'admin_dishModifier')]
     public function dishDisplayer(
         StarterRepository $starterRepository,
-        DishRepository $dishRepository,
-        AperitifRepository $aperitifRepository,
-        DrinkRepository $drinkRepository,
-        CellarRepository $cellarRepository,
-        DessertsRepository $dessertsRepository
     ) : Response
     {
         $starters = $starterRepository->findAll();
-        $dishes = $dishRepository->findAll();
-        $aperitifs = $aperitifRepository->findAll();
-        $drinks = $drinkRepository->findAll();
-        $cellars = $cellarRepository->findAll();
-        $desserts = $dessertsRepository->findAll();
 
         return $this->render('Admin/dishModifier.html.twig', [
             "starters" => $starters,
-            "desserts" => $desserts,
-            "dishes" => $dishes,
-            "drinks" => $drinks,
-            "cellars" => $cellars,
-            "aperitifs" => $aperitifs,
         ]);
     }
 
@@ -67,8 +52,9 @@ class DishModifierController extends AbstractController
     {
         $entityClass = $this->getEntityClass($type);
         $entity = $doctrine->getRepository($entityClass)->find($id);
-    
-        $form = $this->createForm(RemainingPlacesType::class, $entity);
+        
+        $formType = $this->getFormType($type);
+        $form = $this->createForm($formType, $entity);
         $form->handleRequest($request);
     
         if ($form->isSubmitted() && $form->isValid()) {
@@ -129,6 +115,6 @@ class DishModifierController extends AbstractController
                 return CellarType::class;
             }
 
-            throw new \InvalidArgumentException("Type de plat non valide");
+        throw new \InvalidArgumentException("Formulaire invalide");
     }
 }

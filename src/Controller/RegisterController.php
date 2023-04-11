@@ -28,11 +28,13 @@ class RegisterController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $email = $form->get('email')->getData(); // Get email data
-            $formData = $form->getData(); // get form data 
-            $entityManager = $doctrine->getManager();
-            $existingUser = $entityManager->getRepository(Customer::class)->findBy(['email' => $email]);
             $password = $form->get('password')->getData();
             $confirmPassword = $form->get('confirm')->getData();
+
+            $formData = $form->getData(); // get form data 
+
+            $entityManager = $doctrine->getManager();
+            $existingUser = $entityManager->getRepository(Customer::class)->findBy(['email' => $email]);
             
             // If password is not equal at password confirmation
             if ($password !== $confirmPassword) {

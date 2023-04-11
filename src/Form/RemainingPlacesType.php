@@ -18,7 +18,6 @@ class RemainingPlacesType extends AbstractType
                     'form_attr' => true,
                     'class' => 'text-black lg:text-xl xs:text-lg',
                     'min' => 0,
-                    
                 ],
             ])
         ;
