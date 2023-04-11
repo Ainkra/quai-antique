@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class ConnectionController extends AbstractController
 { 
-    #[Route('/connection', name: 'app_connection')]
+    #[Route('/connection', name: 'connection')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         $customer = $this->getUser();

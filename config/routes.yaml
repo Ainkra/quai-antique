@@ -8,3 +8,7 @@ controllers:
 logout:
     path: /logout
     methods: GET
+
+login:
+    path: /connection
+    methods: GET

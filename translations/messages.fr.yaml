@@ -1,0 +1,2 @@
+security:
+  bad_credentials: "Nom d'utilisateur ou mot de passe incorrect."
