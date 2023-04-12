@@ -35,12 +35,27 @@ class DishModifierController extends AbstractController
     #[Route('admin/dishModifier', name: 'admin_dishModifier')]
     public function dishDisplayer(
         StarterRepository $starterRepository,
+        DishRepository $dishRepository,
+        AperitifRepository $aperitifRepository,
+        DrinkRepository $drinkRepository,
+        CellarRepository $cellarRepository,
+        DessertsRepository $dessertsRepository
     ) : Response
     {
         $starters = $starterRepository->findAll();
+        $dishes = $dishRepository->findAll();
+        $aperitifs = $aperitifRepository->findAll();
+        $drinks = $drinkRepository->findAll();
+        $cellars = $cellarRepository->findAll();
+        $desserts = $dessertsRepository->findAll();
 
         return $this->render('Admin/dishModifier.html.twig', [
             "starters" => $starters,
+            "dishes" => $dishes,
+            "aperitifs" => $aperitifs,
+            "drinks" => $drinks,
+            "cellars" => $cellars,
+            "desserts" => $desserts
         ]);
     }
 
