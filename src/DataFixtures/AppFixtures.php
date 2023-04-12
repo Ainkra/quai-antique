@@ -4,21 +4,19 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use App\Entity\Customer;
+use App\Entity\Starter;
 
 class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $user = new Customer();
+        $starter = new Starter();
 
-        $user->setEmail("john@doe.com");
-        $user->setRoles([]);
-        $user->setPassword("$2y$13$7o1Cg54JTv6STykbm4VGueRXaflBnt6XikRMktkKhrQZ.RYKGXMIq");
-        $user->setGuestNumber(1);
-        $user->setAllergies("Aucune");
+        $starter->setTitle("Salade césar");
+        $starter->setDescription("Laitue romaine, croûtons, parmesan râpé, sauce césar.");
+        $starter->setPrice("5,00");
 
-        $manager->persist($user);
+        $manager->persist($starter);
         $manager->flush();
     }
 }
