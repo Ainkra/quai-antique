@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class BookingType extends AbstractType
 {
@@ -19,6 +20,13 @@ class BookingType extends AbstractType
                 'attr' => [
                     'class' => 'rounded-sm mb-1 p-5 text-black w-64 h-9 text-input',
                     'placeholder' => 'Entrez votre nom',
+                ],
+                'constraints' => [
+                    new Assert\NotBlank(),
+                    new Assert\Regex([
+                        'pattern' => '/^[a-zA-Z]+$/',
+                        'message' => 'Le nom ne doit contenir que des lettres.',
+                    ]),
                 ],
                 "required" => true,
             ])

@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class CellarType extends AbstractType
 {
@@ -18,12 +19,26 @@ class CellarType extends AbstractType
                     'class' => 'card-input',
                     'placeholder' => 'titre'
                 ],
+                'constraints' => [
+                    new Assert\NotBlank(),
+                    new Assert\Regex([
+                        'pattern' => '/^[a-zA-Z]+$/',
+                        'message' => 'Le nom ne doit contenir que des lettres.',
+                    ]),
+                ],
                 "required" => true
             ])
             ->add('description', TextType::class, [
                 'attr' => [
                     'class' => 'card-input',
                     'placeholder' => 'description'
+                ],
+                'constraints' => [
+                    new Assert\NotBlank(),
+                    new Assert\Regex([
+                        'pattern' => '/^[a-zA-Z,]*$/',
+                        'message' => 'La description ne doit contenir que des lettres et des virgules.',
+                    ]),
                 ],
                 "required" => true
             ])
