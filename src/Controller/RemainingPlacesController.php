@@ -25,12 +25,21 @@ class RemainingPlacesController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $doctrine->getManager();
-            $entityManager->persist($remainingPlaces);
-            $entityManager->flush();
+
+            if ($remainingPlaces === null) {
+                $remainingPlacesNew = new RemainingPlaces();
+                $remainingPlacesNew->setPlaces($form['places']->getData());
+                $entityManager = $doctrine->getManager();
+                $entityManager->persist($remainingPlacesNew);
+                $entityManager->flush();
+
+            } else {
+                $entityManager = $doctrine->getManager();
+                $entityManager->persist($remainingPlaces);
+                $entityManager->flush();
+            }
 
             $message = "Nombre de places maximum modifié avec succès !";
-            
             return $this->render('Admin/bookingManager.html.twig', [
                 'form' => $form,
                 'message' => $message
