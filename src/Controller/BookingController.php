@@ -17,7 +17,7 @@ class BookingController extends AbstractController
 {
     // Booking route 
     #[Route('/booking', name: 'app_booking')]
-    public function booking(Request $request, ManagerRegistry $doctrine): Response
+    public function booking(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $getDoctrineRepo): Response
     {
         // get user
         $user = $this->getUser();
@@ -28,21 +28,37 @@ class BookingController extends AbstractController
         $bookingTime = $form['bookingTime']->getData();
         
         if ($form->isSubmitted() && $form->isValid()) {
+
             $entityManager = $doctrine->getManager();
 
-            // Create new booking input
-            $booking = new Booking();
-            $booking->setName($form['name']->getData()); // Get name data
-            $booking->setGuestNumber($form['guestNumber']->getData()); // Get guestNumber data
-            $booking->setDate($form['date']->getData()); // Get date data
-            $booking->setBookingTime(new \DateTimeImmutable($bookingTime)); // Get hour data
-            $booking->setAllergies($form['allergies']->getData()); // Get allergies data
+            $repository = $getDoctrineRepo->getRepository(Booking::class);
+            $remainingPlaces = $repository->createQueryBuilder('e')
+                ->select('count(e.id)')
+                ->getQuery()
+                ->getSingleScalarResult();
 
-            $entityManager->persist($booking);
-            $entityManager->flush(); // send data in data base
+            $currentBookingGuests = $form['guestNumber']->getData();
 
-            $message = 'Votre réservation est bien envoyée !'; // notification message
-            $messageType = 'success'; // Used in template for modify css class
+            if ($currentBookingGuests > $remainingPlaces) {
+                // Refusez la réservation et renvoyez un message d'erreur à l'utilisateur
+                $message = "Aucune place n'est disponible. Veuillez revenir plus tard.";
+                $messageType = 'error';
+
+            } else {
+                $booking = new Booking();
+                $booking->setName($form['name']->getData()); // Get name data
+                $booking->setGuestNumber($form['guestNumber']->getData()); // Get guestNumber data
+                $booking->setDate($form['date']->getData()); // Get date data
+                $booking->setBookingTime(new \DateTimeImmutable($bookingTime)); // Get hour data
+                $booking->setAllergies($form['allergies']->getData()); // Get allergies data
+
+                $entityManager->persist($booking);
+                $entityManager->flush(); // send data in data base
+
+
+                $message = 'Votre réservation est bien envoyée !'; // notification message
+                $messageType = 'success'; // Used in template for modify css class
+            }
 
             $form = $this->createForm(BookingType::class); // form creation
 
@@ -58,6 +74,7 @@ class BookingController extends AbstractController
             'booking' => $form->createView()
         ]);
     }
+
 
     #[Route('/booking/remainingPlaces', name: 'app_booking_remainingPlaces', methods: ['GET'])]
     public function remainingPlaces(EntityManagerInterface $doctrine): JsonResponse
