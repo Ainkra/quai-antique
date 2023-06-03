@@ -53,7 +53,9 @@ class BookingType extends AbstractType
                 'widget' => 'single_text',
                 'html5' => true,
                 'attr' => [
-                    'class' => 'rounded-sm mb-1'
+                    'class' => 'rounded-sm mb-1',
+                    'min' => (new \DateTime())->format('Y-m-d'),
+                    'max' => (new \DateTime('last day of this month'))->format('Y-m-d'),
                 ],
                 "required" => true
             ])

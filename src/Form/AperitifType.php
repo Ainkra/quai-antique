@@ -45,7 +45,7 @@ class AperitifType extends AbstractType
             ->add('price', TextType::class, [ // Text input type
                 'attr' => [
                     'class' => 'card-input',
-                    'placeholder' => 'price'
+                    'placeholder' => '0,00'
                 ],
                 'constraints' => [
                     new Assert\NotBlank(),

@@ -45,7 +45,7 @@ class DessertType extends AbstractType
             ->add('price', TextType::class, [
                 'attr' => [
                     'class' => 'card-input',
-                    'placeholder' => 'prix'
+                    'placeholder' => '0,00'
                 ],
                 'constraints' => [
                     new Assert\NotBlank(),
