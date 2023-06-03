@@ -23,7 +23,9 @@
 	    			S'enregistrer
 	    		</button>
 	    		<p class="text-xs mt-2">Vous possédez déjà un compte?</p>
-	    		<a href="{{ path('app_connection') }}" class="text-sm font-bold hover:text-orange-200">Connectez-vous !</a>
+	    		<a href="{{ path('app_connection') }}" class="text-sm font-bold hover:text-orange-200">
+					Connectez-vous !
+				</a>
 				{% if message is defined %}
 				    <p class="message-{{ messageType }}">{{ message }}</p>
 				{% endif %}
