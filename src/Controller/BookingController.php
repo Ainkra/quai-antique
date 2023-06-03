@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Booking;
 use App\Entity\RemainingPlaces;
+use App\Repository\RemainingPlacesRepository;
+use App\Repository\BookingRepository;
 use App\Form\BookingType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
@@ -17,35 +19,46 @@ class BookingController extends AbstractController
 {
     // Booking route 
     #[Route('/booking', name: 'app_booking')]
-    public function booking(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $getDoctrineRepo): Response
+    public function booking(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $getDoctrine): Response
     {
-        // get user
-        $user = $this->getUser();
-
         // Create form and get data in form.
         $form = $this->createForm(BookingType::class);
         $form->handleRequest($request); // Handle request
+        
         $bookingTime = $form['bookingTime']->getData();
         
         if ($form->isSubmitted() && $form->isValid()) {
 
             $entityManager = $doctrine->getManager();
+            $bookingDate = $form['date']->getData();
 
-            $repository = $getDoctrineRepo->getRepository(Booking::class);
-            $remainingPlaces = $repository->createQueryBuilder('e')
+            // SELECT COUNT(id) 
+            // FROM booking
+            // WHERE date = :date;
+            $bookingRepository = $getDoctrine->getRepository(Booking::class);
+            $bookingNumber = $bookingRepository->createQueryBuilder('e')
                 ->select('count(e.id)')
+                ->where('e.date = :date')
+                ->setParameter('date', $bookingDate)
                 ->getQuery()
                 ->getSingleScalarResult();
 
-            $currentBookingGuests = $form['guestNumber']->getData();
+            // SELECT places
+            // FROM remaining_places;
+            $remainingPlacesRepository = $getDoctrine->getRepository(RemainingPlaces::class);
+            $remainingPlaces = $remainingPlacesRepository->createQueryBuilder('p')
+                ->select('p.places') 
+                ->getQuery() 
+                ->getSingleScalarResult();
 
-            if ($currentBookingGuests > $remainingPlaces) {
+            if ($bookingNumber >= $remainingPlaces) {
                 // Refusez la réservation et renvoyez un message d'erreur à l'utilisateur
-                $message = "Aucune place n'est disponible. Veuillez revenir plus tard.";
+                $message = "Aucune table n'est disponible ce jour. Veuillez revenir plus tard.";
                 $messageType = 'error';
 
             } else {
                 $booking = new Booking();
+
                 $booking->setName($form['name']->getData()); // Get name data
                 $booking->setGuestNumber($form['guestNumber']->getData()); // Get guestNumber data
                 $booking->setDate($form['date']->getData()); // Get date data
@@ -55,28 +68,28 @@ class BookingController extends AbstractController
                 $entityManager->persist($booking);
                 $entityManager->flush(); // send data in data base
 
-
                 $message = 'Votre réservation est bien envoyée !'; // notification message
-                $messageType = 'success'; // Used in template for modify css class
+                $messageType = 'success'; // css class success
+
+                return $this->redirectToRoute('app_booking');
             }
 
-            $form = $this->createForm(BookingType::class); // form creation
-
-             // form display
             return $this->render('Booking/booking.html.twig', [
                 'booking' => $form->createView(),
                 'message' => $message,
                 'messageType' => $messageType
             ]);
         }
+        
+        $form = $this->createForm(BookingType::class); // form creation
 
+        // form display
         return $this->render('Booking/booking.html.twig', [
-            'booking' => $form->createView()
+            'booking' => $form->createView(),
         ]);
     }
 
-
-    #[Route('/booking/remainingPlaces', name: 'app_booking_remainingPlaces', methods: ['GET'])]
+    #[Route('/booking/remainingPlaces', name: 'app_booking_remainingPlaces')]
     public function remainingPlaces(EntityManagerInterface $doctrine): JsonResponse
     {
         $remainingPlacesRepository = $doctrine->getRepository(RemainingPlaces::class);
