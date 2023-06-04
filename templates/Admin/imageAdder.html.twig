@@ -1,0 +1,36 @@
+{% include 'Components/adminhead.html.twig' %}
+{% include 'Components/adminheader.html.twig' %}
+
+<body class="admin-background min-h-screen">
+{% block body %}
+    <body class="background">
+        
+		<section class="text-right m-5">
+            <a href={{ path('admin_galeryManager')}} class="w-40 m-3 rounded-md bg-green-600 hover:bg-green-700 p-2 text-white transition-all ease-in font-bold text-right">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>  
+        </section>
+		<p class="text-center text-white text-4xl m-5">Ajouter une image</p>
+		<section class="grid lg:grid-rows-3 xs:grid-rows-3 lg:flex-row xs:flex-col text-center mt-10">
+			{{ form_start(image) }}
+				{{ form_widget(image.imageFilename) }}
+				{{ form_widget(image.description) }}
+				<section>
+					<button 
+						type="submit" 
+						method="post" 
+						class="
+							w-20 rounded-md bg-green-700 hover:bg-green-500 text-white p-1 transition-all ease-in font-bold
+						"
+					>
+						Envoyer
+					</button>
+				</section>
+				{% if message is defined %}
+					<p class="message-{{ messageType }} text-center">{{ message }}</p>
+				{% endif %}
+			{{ form_end(image) }}
+		</section>
+		
+    </body>
+{% endblock %}
