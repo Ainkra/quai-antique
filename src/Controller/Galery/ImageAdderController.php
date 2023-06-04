@@ -81,6 +81,7 @@ class ImageAdderController extends AbstractController
                 $messageType = 'error';
 
                 return $this->render('admin/news_adder/newsAdder.html.twig', [
+                    "image" => $imageForm->createView(),
                     "message" => $message,
                     "messageType" => $messageType
                 ]);

@@ -10,7 +10,6 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class GaleryMenuController extends AbstractController
 {
     #[Route('/admin/galeryManager', name: 'admin_galeryManager')]
-    #[IsGranted('ROLE_ADMIN')]
     public function galeryMenu(): Response
     {
         return $this->render('Admin/galeryManager.html.twig', [

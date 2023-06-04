@@ -92,12 +92,16 @@ class BookingController extends AbstractController
     #[Route('/booking/remainingPlaces', name: 'app_booking_remainingPlaces')]
     public function remainingPlaces(EntityManagerInterface $doctrine): JsonResponse
     {
+        // SELECT places
+        // FROM remaining_places;
         $remainingPlacesRepository = $doctrine->getRepository(RemainingPlaces::class);
         $remainingPlaces = $remainingPlacesRepository->createQueryBuilder('p')
             ->select('p.places') 
             ->getQuery() 
             ->getSingleScalarResult();
 
+        // SELECT COUNT(id)
+        // FROM booking;
         $bookingRepository = $doctrine->getRepository(Booking::class); 
         $bookingNumber = $bookingRepository->createQueryBuilder('e') 
             ->select('count(e.id)') 
