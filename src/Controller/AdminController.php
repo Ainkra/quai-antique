@@ -37,14 +37,6 @@ class AdminController extends AbstractController
         ]);
     }
 
-    // Render galeryManager
-    #[Route('/admin/galeryManager', name: 'admin_galeryManager')]
-    #[IsGranted('ROLE_ADMIN')]
-    public function galeryManager()
-    {
-        return $this->render('Admin/galeryManager.html.twig');
-    }
-
     // Render shedulerManager
     #[Route('/admin/shedulerManager', name: 'admin_shedulerManager')]
     #[IsGranted('ROLE_ADMIN')]
