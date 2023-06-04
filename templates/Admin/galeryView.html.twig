@@ -1,0 +1,31 @@
+{% include 'Components/adminhead.html.twig' %}
+{% include 'Components/adminheader.html.twig' %}
+
+<body class="admin-background min-h-screen">
+{% block body %}
+	    <body class="background text-center">
+        <p class="text-center text-white text-4xl m-5">Voir les images</p>
+        <section class="text-right m-5">
+            <a href={{ path('admin_galeryManager')}} class="w-40 m-3 rounded-md bg-green-600 hover:bg-green-700 p-2 text-white transition-all ease-in font-bold text-right">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>  
+        </section>
+        <section class="relative text-white mt-10 lg:mx-5 xs:mx-0 lg:mb-28 xs:mb-48 text-center"> 
+            <section class="grid lg:grid-cols-3 xs:grid-cols-1 lg:grid-rows-6 xs:grid-rows-6 gap-1">
+            {% if images is defined %}
+                {% for image in images %}
+                    <form action={{ path('admin_galeryView_delete', {'id': image.id}) }} method="POST" class="relative">
+                        <img src={{ asset('uploads/' ~ image.imageFilename) }} alt="Image" class="rounded-sm h-full w-full">
+						<p class="absolute bottom-0 left-0 w-full text-left text-white text-xl p-4">{{ image.description }}</p>
+                        <button type="submit" class="deleteButton rounded-sm text-white absolute p-2 top-0 left-0">
+                            <i class="fa-sharp fa-solid fa-xmark"></i>
+                        </button>
+                    </form>
+                {% endfor %}
+            {% else %}
+                Aucune image n'a été trouvée.<br>Veuillez en ajouter.
+            {% endif %}
+            </section>
+        </section>
+    </body>
+{% endblock %}
