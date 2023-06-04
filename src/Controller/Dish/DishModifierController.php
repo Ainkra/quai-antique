@@ -14,7 +14,6 @@ use App\Form\AperitifType;
 use App\Form\CellarType;
 use App\Form\DrinkType;
 use App\Form\DessertType;
-use App\Form\RemainingPlacesType;
 use App\Repository\StarterRepository;
 use App\Repository\AperitifRepository;
 use App\Repository\DishRepository;
@@ -60,7 +59,9 @@ class DishModifierController extends AbstractController
     }
 
     /**
-     * Permit to get the dish and modify it
+     * Permit to modify a dish
+     * @param string $type
+     * @param int $id
      */
     #[Route('admin/dishModifier/{type}/{id}/edit', name: 'admin_dishModifier_edit')]
     public function dishModifier(Request $request, $type, $id, ManagerRegistry $doctrine): Response
@@ -86,7 +87,7 @@ class DishModifierController extends AbstractController
     }
 
     /**
-     * Permit to get the dish and identify it
+     * Permit to get the dish type and identify it
      * @param string $type Dish type
      */
     private function getEntityClass($type)
