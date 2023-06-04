@@ -15,7 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DishDeleterController extends AbstractController
 {
-
     #[Route('admin/viewer', name: 'admin_viewer')]
     public function showArticles(
             StarterRepository $starterRepository,
@@ -48,7 +47,8 @@ class DishDeleterController extends AbstractController
     #[Route('admin/viewer/delete/{type}/{id}', name: 'admin_viewer_delete')]
     public function deleteItem(string $type, int $id, ManagerRegistry $doctrine): Response
     {
-        // Determine which entity class to use based on $type
+        // Determine which entity class to use based on $type.
+        // We make first letter in UPPERCASE.
         $entityClass = 'App\\Entity\\' . ucfirst($type);
 
         // Get the entity object
