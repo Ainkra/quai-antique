@@ -92,3 +92,15 @@
 .admin-modify-button {
     @apply w-32 rounded-md hover:bg-green-500 text-white transition-all ease-in font-bold p-1 my-1;
 }
+
+.card-input {
+    @apply mb-2 text-black lg:text-xl xs:text-lg;
+}
+
+.deleteButton {
+    background: rgb(253, 80, 80);
+}
+
+.deleteButton {
+    @apply hover:bg-red-700 transition-all ease-in;
+}
