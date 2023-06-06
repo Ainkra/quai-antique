@@ -50,11 +50,11 @@
 		function fetchRemainingPlaces() {
 			fetch('/booking/remainingPlaces')
 				.then(function(response) {
-				if (!response.ok) {
-					throw new Error('Une erreur est survenue. Veuillez revenir plus tard...');
-				}
-					return response.json();
-				})
+					if (!response.ok) {
+						throw new Error('Une erreur est survenue. Veuillez revenir plus tard..');
+					}
+						return response.json();
+					})
 				
 				.then(function(data) {
 					const bookingNumber = data.remainingPlaces - data.bookingNumber;

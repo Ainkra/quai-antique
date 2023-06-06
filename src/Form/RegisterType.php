@@ -25,7 +25,8 @@ class RegisterType extends AbstractType
             ])
             ->add('password', PasswordType::class, [
                 "required" => true,
-                "constraints" => [new Length([
+                "constraints" => [
+                    new Length([
                         'min' => 6, 
                         'minMessage' => 'Chaîne de caractères trop courte.', 
                         'max' => 60,

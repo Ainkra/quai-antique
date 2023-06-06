@@ -24,6 +24,8 @@ class BookingController extends AbstractController
         // Create form and get data in form.
         $form = $this->createForm(BookingType::class);
         $form->handleRequest($request); // Handle request
+        $messageType = '';
+        $message = '';
         
         $bookingTime = $form['bookingTime']->getData();
         

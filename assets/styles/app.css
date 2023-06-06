@@ -162,3 +162,8 @@ input[type="date"] {
 .message-error {
     @apply text-red-400 font-bold;
 }
+
+.grid-rows-auto {
+    display: grid;
+    grid-template-rows: auto;
+}

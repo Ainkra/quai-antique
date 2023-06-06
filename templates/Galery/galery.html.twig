@@ -4,12 +4,14 @@
 		{% include 'Components/header.html.twig' %}
 		<main class="relative text-white mt-10 lg:mx-5 xs:mx-0 lg:mb-28 xs:mb-48 text-center">
 			<h1 class="text-center text-4xl text-white mt-10 mb-10">Notre galerie</h1>
-		  	<section class="grid lg:grid-cols-3 xs:grid-cols-1 lg:grid-rows-6 xs:grid-rows-6 gap-1">
+		  	<section class="grid lg:grid-cols-3 xs:grid-cols-1 grid-rows-auto gap-1">
 				{% if images is defined %}
 					{% for image in images %}
 						<div class="relative">
 							<img src={{ asset('uploads/' ~ image.imageFilename) }} alt="Image" class="h-full w-full">
-							<div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">{{image.description}}</div>
+							<div class="absolute bottom-0 w-full text-center text-white text-xl p-4 hidden">
+								{{image.description}}
+							</div>
 						</div>
 					{% endfor %}
 				{% else %}
