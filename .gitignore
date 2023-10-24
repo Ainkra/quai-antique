@@ -1,5 +1,8 @@
 
 ###> symfony/framework-bundle ###
+composer.lock
+package-lock.json
+postcss.config.js
 .env
 /.env.local
 /.env.local.php
