@@ -1,4 +1,4 @@
-> This project is probably deprecated. Do not use if you don't know what you did.
+> This project is now deprecated. Do not use if you don't know what you did.
 > AT YOUR OWN RISK !
 
 # quai-antique
