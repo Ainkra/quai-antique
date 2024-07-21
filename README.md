@@ -1,6 +1,3 @@
-> This project is now deprecated. Do not use it if you don't know what you did.
-> AT YOUR OWN RISK !
-
 # quai-antique
 Quai Antique is a Savoyard restaurant website built with the Symfony web framework and Tailwind CSS. The website was developed and hosted on Laragon. This website is my final exam for my school. If you have any opinion/advice or other to give me, contact me by email: loisdupasquier21@gmail.com 
 
