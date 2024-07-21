@@ -1,5 +1,5 @@
 > [!WARNING]  
-> ### DEPRECATION NOTICE
+> ### DEVELOPERS, AT YOUR OWN RISK
 > It’s important to note that this project was a significant part of my learning process, mainly because it includes many things I shouldn’t have done. When I coded this website, I had to learn Symfony on the fly, making numerous mistakes. Many aspects of programming and web development were completely unfamiliar to me at the time. My errors range from the architecture to the code itself, and even to the minimal use of JavaScript, which makes the site quite static. I spent a lot of time reinventing the wheel instead of using existing tools. If the goal had been to address a specific problem, that might have been justified (first problem principle), but that wasn’t the case here.
 > 
 > Nonetheless, it’s a lesson worth keeping, which is why I’m archiving this repository. After all, it was a lot of fun to work on back then!
