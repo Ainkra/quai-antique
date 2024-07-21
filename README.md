@@ -4,7 +4,7 @@
 > 
 > Nonetheless, it’s a lesson worth keeping, which is why I’m archiving this repository. After all, it was a lot of fun to work on back then!
 > 
-> If you wish to reuse this project: This project is deprecated. I no longer have the time or motivation to maintain it, as I am now focused on the latest versions of Symfony, PHP, and many JavaScript projects. Please be aware that there are likely security issues and deprecations, potentially numerous. I was still a novice when I worked on this project. 
+> If you wish to reuse this project: This project is deprecated. I no longer have the time or motivation to maintain it, as I am now focused on the latest versions of Symfony, PHP, many JavaScript projects and many other technologies. Please be aware that there are likely security issues and deprecations, potentially numerous. I was still a novice when I worked on this project. 
 >
 > __**YOU CAN USE IT IF YOU WISH, BUT IT'S AT YOUR OWN RISK !**__
 
